@@ -9,6 +9,8 @@ function main()
     --Redirect terminal to monitor
     local terminal = term.redirect(monitor)
 
+    monitor.setCursorBlink(false)
+
     --Set colors for page background
     monitor.setPaletteColor(colors.black, 0x000000)
     --Draw page background
