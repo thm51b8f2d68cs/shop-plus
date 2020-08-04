@@ -20,6 +20,7 @@ function main()
     drawBackground(15, 3, 18, 24, colors.black)
     drawTitle(5, 2)
 
+
     --Set colors for categories background
     --Draw categories background
     --monitor.setPaletteColor(colors.white, 0xFFFFFF)
