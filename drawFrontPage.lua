@@ -15,12 +15,12 @@ function main()
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    --[[monitor.setPaletteColor(colors.black, 0x050505)
+    monitor.setPaletteColor(colors.black, 0x050505)
     --Draw title
     drawBackground(15, 3, 18, 24, colors.black)
     drawTitle(15, 3)
 
-    --Set colors for categories background
+    --[[--Set colors for categories background
     --Draw categories background
     monitor.setPaletteColor(colors.white, 0xFFFFFF)
     drawBackground(2, 2, 14, 22, colors.white)
