@@ -8,7 +8,7 @@ function main()
     monitor = peripheral.wrap(side)
 
     --Redirect terminal to monitor
-    local termDirect = term.redirect(monitor)
+    local terminal = term.redirect(monitor)
 
     --Set colors for page background
     monitor.setPaletteColor(colors.black, 0x000000)
@@ -52,6 +52,8 @@ function main()
 
     --Set color for frames
     --Draw frames
+
+    term.redirect(terminal)
 
 end
 
