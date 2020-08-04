@@ -1,0 +1,4 @@
+Block0
+Decoration0
+Combat0
+Resource0
