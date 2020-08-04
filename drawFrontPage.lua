@@ -68,7 +68,7 @@ function drawTitle(x, y)
     --Set text size for title
     monitor.setCursorPos(x,y)
     monitor.setTextScale(2)
-    monitor.blit("Switch Shop", 0x0AD9FF, 0x050505)
+    monitor.blit("Switch Shop", "0x0AD9FF", "0x050505")
 end
 
 function drawCategories(x, y)
@@ -87,9 +87,9 @@ function drawCategories(x, y)
         monitor.setCursorPos(x,y)
 
         if (index % 2 == 0) then
-           monitor.blit(line, 0x0AD9FF, 0x050505)
+           monitor.blit(line, "0x0AD9FF", "0x050505")
         else
-            monitor.blit(line, 0xFFFFFF, 0x292929)
+            monitor.blit(line, "0xFFFFFF", "0x292929")
         end
 
         index = index + 1
