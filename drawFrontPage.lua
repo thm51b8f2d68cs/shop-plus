@@ -20,13 +20,13 @@ function main()
     drawBackground(15, 3, 18, 24, colors.black)
     drawTitle(15, 3)
 
-    --[[--Set colors for categories background
+    --Set colors for categories background
     --Draw categories background
-    monitor.setPaletteColor(colors.white, 0xFFFFFF)
-    drawBackground(2, 2, 14, 22, colors.white)
+    --monitor.setPaletteColor(colors.white, 0xFFFFFF)
+    --drawBackground(2, 2, 14, 22, colors.white)
 
     --Draw categories
-    drawCategories(2, 2)]]
+    --drawCategories(2, 2)
 
     --Set colors for report bug background and text
     --Set text size for report bug
