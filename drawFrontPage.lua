@@ -68,8 +68,10 @@ function drawTitle(x, y)
     --Set text size for title
     monitor.setCursorPos(x, y)
     monitor.setTextScale(2)
-    monitor.setTextColor(0x0AD9FF)
-    monitor.setBackgroundColor(0x050505)
+    monitor.setPaletteColor(colors.blue, 0x0AD9FF)
+    monitor.setPaletteColor(colors.black, 0x050505)
+    monitor.setTextColor(colors.blue)
+    monitor.setBackgroundColor(colors.black)
     monitor.write("Switch Shop")
 end
 
@@ -89,12 +91,16 @@ function drawCategories(x, y)
         monitor.setCursorPos(x, y)
 
         if (index % 2 == 0) then
-            monitor.setTextColor(0x0AD9FF)
-            monitor.setBackgroundColor(0x050505)
+            monitor.setPaletteColor(colors.blue, 0x0AD9FF)
+            monitor.setPaletteColor(colors.black, 0x050505)
+            monitor.setTextColor(colors.blue)
+            monitor.setBackgroundColor(colors.black)
             monitor.write(line)
         else
-            monitor.setTextColor(0xFFFFFF)
-            monitor.setBackgroundColor(0x292929)
+            monitor.setPaletteColor(colors.white, 0xFFFFFF)
+            monitor.setPaletteColor(colors.grey, 0x292929)
+            monitor.setTextColor(colors.white)
+            monitor.setBackgroundColor(colors.grey)
             monitor.write(line)
         end
 
