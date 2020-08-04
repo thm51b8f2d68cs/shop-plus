@@ -1,4 +1,3 @@
-
 function main()
 
 
@@ -54,7 +53,6 @@ function main()
     --Draw frames
 
     term.redirect(terminal)
-
 end
 
 function setColors()
@@ -68,9 +66,11 @@ end
 function drawTitle(x, y)
     --Set colors for title
     --Set text size for title
-    monitor.setCursorPos(x,y)
+    monitor.setCursorPos(x, y)
     monitor.setTextScale(2)
-    monitor.blit("Switch Shop", "0x0AD9FF", "0x050505")
+    monitor.setTextColor(0x0AD9FF)
+    monitor.setBackgroundColor(0x050505)
+    monitor.write("Switch Shop")
 end
 
 function drawCategories(x, y)
@@ -86,38 +86,36 @@ function drawCategories(x, y)
         line = io.read("*l")
         line = line:sub(1, -2)
 
-        monitor.setCursorPos(x,y)
+        monitor.setCursorPos(x, y)
 
         if (index % 2 == 0) then
-           monitor.blit(line, "0x0AD9FF", "0x050505")
+            monitor.setTextColor(0x0AD9FF)
+            monitor.setBackgroundColor(0x050505)
+            monitor.write(line)
         else
-            monitor.blit(line, "0xFFFFFF", "0x292929")
+            monitor.setTextColor(0xFFFFFF)
+            monitor.setBackgroundColor(0x292929)
+            monitor.write(line)
         end
 
         index = index + 1
         y = y + 3
     end
-
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
-
 end
 
 function drawButtons(color, spacing)
-
 end
 
 function drawFooter()
-
 end
 
 function drawMadeBy(x, y)
-
 end
 
 function drawVersion(x, y)
-
 end
 
 main()
