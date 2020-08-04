@@ -15,7 +15,7 @@ function main()
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    monitor.setPaletteColor(colors.black, 0x050505)
+    --[[monitor.setPaletteColor(colors.black, 0x050505)
     --Draw title
     drawBackground(15, 3, 18, 24, colors.black)
     drawTitle(15, 3)
@@ -26,7 +26,7 @@ function main()
     drawBackground(2, 2, 14, 22, colors.white)
 
     --Draw categories
-    drawCategories(2, 2)
+    drawCategories(2, 2)]]
 
     --Set colors for report bug background and text
     --Set text size for report bug
