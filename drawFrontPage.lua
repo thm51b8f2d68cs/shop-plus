@@ -31,7 +31,7 @@ function main()
     drawBackground(2, 2, 30, 46, colors.white)
 
     --Draw categories
-    --drawCategories(2, 2)
+    drawCategories(2, 2)
 
     --Set text size for report bug
     --Draw report bug
