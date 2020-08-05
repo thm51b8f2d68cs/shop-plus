@@ -12,7 +12,7 @@ function main()
     monitor.setCursorBlink(false)
 
     --Set colors for page background
-    monitor.setPaletteColor(colors.black, 0x000000)
+    monitor.setPaletteColor(colors.black, 0x111111)
     --Draw page background
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
