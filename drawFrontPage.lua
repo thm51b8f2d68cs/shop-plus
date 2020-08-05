@@ -1,21 +1,20 @@
 function main()
+    --Wrap monitor
+    side = "top"
+    monitor = peripheral.wrap(side)
+
+    --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
     monitor.setPaletteColor(colors.gray, 0x151515)
     monitor.setPaletteColor(colors.white, 0xFFFFFF)
     monitor.setPaletteColor(colors.lightGray, 0x292929)
     monitor.setPaletteColor(colors.lightBlue, 0x0AD9FF)
 
-
-    --Wrap monitor
-    side = "top"
-    monitor = peripheral.wrap(side)
-
     --Redirect terminal to monitor
     local terminal = term.redirect(monitor)
 
     monitor.setCursorBlink(false)
 
-    --Set colors for page background
 
     --Draw page background
     --Canvas size is 50x26
@@ -25,9 +24,6 @@ function main()
     drawBackground(4, 1, 7, 3, colors.gray)
     drawTitle(4, 1)
 
-    --monitor.setPaletteColor(colors.black, 0x000000)
-
-    --Set colors for categories background
     --Draw categories background
 
     drawBackground(1, 1, 2, 6, colors.white)
@@ -35,28 +31,22 @@ function main()
     --Draw categories
     --drawCategories(2, 2)
 
-    --Set colors for report bug background and text
     --Set text size for report bug
     --Draw report bug
 
-    --Set colors for background of popular tab
     --Draw popular tab
 
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
 
-    --Set colors for buttons
     --Draw buttons
 
-    --Set colors for footer background
     --Draw footer background
 
-    --Set colors for text
     --Set text size
     --Draw made by
     --Draw version
 
-    --Set color for frames
     --Draw frames
 
     term.redirect(terminal)
