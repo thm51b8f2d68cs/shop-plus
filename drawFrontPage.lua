@@ -21,7 +21,7 @@ function main()
     drawBackground(1, 1, 50, 26, colors.black)
 
     --Draw title
-    drawBackground(4, 1, 7, 3, colors.gray)
+    drawBackground(4, 1, 7, 1, colors.gray)
     drawTitle(4, 1)
 
     --Draw categories background
@@ -62,13 +62,11 @@ function drawBackground(startX, startY, endX, endY, color)
 end
 
 function drawTitle(x, y)
-    --Set colors for title
     --Set text size for title
     monitor.setCursorPos(x, y)
     monitor.setTextScale(4.2)
-    --monitor.setPaletteColor(colors.black, 0x151515)
     monitor.setTextColor(colors.lightBlue)
-    --monitor.setBackgroundColor(colors.black)
+    monitor.setBackgroundColor(colors.gray)
     monitor.write("Switch Shop")
 end
 
