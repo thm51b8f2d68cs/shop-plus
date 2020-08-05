@@ -26,10 +26,10 @@ function main()
 
     --Draw categories background
 
-    drawBackground(1, 1, 2, 6, colors.white)
+    --drawBackground(1, 1, 2, 6, colors.white)
 
     --Draw categories
-    drawCategories(2, 2)
+    --drawCategories(2, 2)
 
     --Set text size for report bug
     --Draw report bug
