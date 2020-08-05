@@ -1,8 +1,12 @@
 function main()
+
+    tileLocations = {}
+
     bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
     monitor = peripheral.wrap(side)
+    local event, monitor, monX, monY = os.pullEvent("monitor_touch")
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
@@ -52,7 +56,7 @@ function main()
 
     --Draw frames
 
-    term.redirect(terminal)
+    --term.redirect(terminal)
 end
 
 function setColors()
@@ -129,5 +133,6 @@ function drawVersion(x, y)
 end
 
 
-
-main()
+while true do
+    main()
+end
