@@ -70,7 +70,7 @@ function drawTitle(x, y)
     --Set colors for title
     --Set text size for title
     monitor.setCursorPos(x, y)
-    monitor.setTextScale(3.4)
+    monitor.setTextScale(3.5)
     monitor.setPaletteColor(colors.blue, 0x0AD9FF)
     monitor.setPaletteColor(colors.black, 0x050505)
     monitor.setTextColor(colors.blue)
