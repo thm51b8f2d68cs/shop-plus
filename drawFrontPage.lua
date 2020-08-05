@@ -20,15 +20,15 @@ function main()
 
     --Draw page background
     --Canvas size is 50x26
-    drawBackground(1, 1, 51, 19, colors.black)
+    drawBackground(1, 1, 102, 38, colors.black)
 
     --Draw title
-    drawBackground(15, 5, 10, 46, colors.gray)
+    drawBackground(15, 5, 20, 92, colors.gray)
     drawTitle(15, 5)
 
     --Draw categories background
 
-    drawBackground(5, 5, 10, 14, colors.white)
+    drawBackground(2, 2, 10, 14, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
@@ -70,7 +70,7 @@ function drawTitle(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     --monitor.write("Switch Shop")
-    bigfont.writeOn(monitor, 1, "Switch Shop", monitor.getCursorPos())
+    bigfont.writeOn(monitor, 2, "Switch Shop", monitor.getCursorPos())
 end
 
 function drawCategories(x, y)
