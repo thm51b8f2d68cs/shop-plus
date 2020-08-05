@@ -17,9 +17,9 @@ function main()
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    monitor.setPaletteColor(colors.orange, 0x151515)
+    monitor.setPaletteColor(colors.gray, 0x151515)
     --Draw title
-    drawBackground(4, 1, 3, 2, colors.orange)
+    drawBackground(4, 1, 3, 2, colors.gray)
     drawTitle(4, 1)
 
     --monitor.setPaletteColor(colors.black, 0x000000)
@@ -74,9 +74,9 @@ function drawTitle(x, y)
     monitor.setCursorPos(x, y)
     monitor.setTextScale(4.2)
     monitor.setPaletteColor(colors.blue, 0x0AD9FF)
-    monitor.setPaletteColor(colors.black, 0x151515)
+    --monitor.setPaletteColor(colors.black, 0x151515)
     monitor.setTextColor(colors.blue)
-    monitor.setBackgroundColor(colors.black)
+    --monitor.setBackgroundColor(colors.black)
     monitor.write("Switch Shop")
 end
 
@@ -97,15 +97,15 @@ function drawCategories(x, y)
 
         if (index % 2 == 0) then
             monitor.setPaletteColor(colors.blue, 0x0AD9FF)
-            monitor.setPaletteColor(colors.black, 0x050505)
+            monitor.setPaletteColor(colors.orange, 0x050505)
             monitor.setTextColor(colors.blue)
-            monitor.setBackgroundColor(colors.black)
+            monitor.setBackgroundColor(colors.orange)
             monitor.write(line)
         else
             monitor.setPaletteColor(colors.white, 0xFFFFFF)
-            monitor.setPaletteColor(colors.grey, 0x292929)
+            monitor.setPaletteColor(colors.red, 0x292929)
             monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.grey)
+            monitor.setBackgroundColor(colors.red)
             monitor.write(line)
         end
 
