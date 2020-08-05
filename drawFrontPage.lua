@@ -19,7 +19,7 @@ function main()
 
     monitor.setPaletteColor(colors.black, 0x151515)
     --Draw title
-    drawBackground(4, 1, 7, 2, colors.black)
+    drawBackground(4, 1, 3, 2, colors.black)
     drawTitle(4, 1)
 
 
