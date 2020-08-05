@@ -27,7 +27,7 @@ function main()
 
     --Draw title
     drawBackground(37, 2, 138, 11, colors.gray)
-    drawTitle(40, 3)
+    drawTitle(40, 3, "Switch Shop")
 
     --Draw categories background
 
@@ -67,14 +67,14 @@ function drawBackground(startX, startY, endX, endY, color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
 
-function drawTitle(x, y)
+function drawTitle(x, y, title)
     --Set text size for title
     monitor.setCursorPos(x, y)
     --monitor.setTextScale(4.2)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     --monitor.write("Switch Shop")
-    bigfont.writeOn(monitor, 2, "Switch Shop", monitor.getCursorPos())
+    bigfont.writeOn(monitor, 2, title, monitor.getCursorPos())
 end
 
 function drawCategories(x, y)
@@ -106,6 +106,10 @@ function drawCategories(x, y)
         y = y + 3
     end
     categories:close()
+end
+
+function drawCategory()
+
 end
 
 function drawBugReport(x, y)
