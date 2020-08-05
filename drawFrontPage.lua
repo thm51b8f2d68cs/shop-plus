@@ -29,14 +29,13 @@ function main()
     --Draw categories background
 
     drawBackground(2, 2, 31, 46, colors.white)
-    categoriesBGWidth = 29
-    categoriesBGLen = 44
 
     --Draw categories
     drawCategories(2, 2)
 
     --Set text size for report bug
     --Draw report bug
+    drawBugReport(2, 48)
 
     --Draw popular tab
 
@@ -104,6 +103,15 @@ function drawCategories(x, y)
         y = y + 3
     end
     categories:close()
+end
+
+function drawBugReport(x, y)
+    drawBackground(x, y, 31, 42, colors.lightGray)
+    monitor.setTextColor(colors.white)
+    monitor.setBackgroundColor(colors.lightGray)
+    monitor.setCursorPos(x+2, y+2)
+    monitor.write("Report a bug")
+
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
