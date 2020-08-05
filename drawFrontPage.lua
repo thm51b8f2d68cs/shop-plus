@@ -1,5 +1,9 @@
 function main()
-
+    monitor.setPaletteColor(colors.black, 0x000000)
+    monitor.setPaletteColor(colors.gray, 0x151515)
+    monitor.setPaletteColor(colors.white, 0xFFFFFF)
+    monitor.setPaletteColor(colors.lightGray, 0x292929)
+    monitor.setPaletteColor(colors.lightBlue, 0x0AD9FF)
 
 
     --Wrap monitor
@@ -12,12 +16,11 @@ function main()
     monitor.setCursorBlink(false)
 
     --Set colors for page background
-    monitor.setPaletteColor(colors.black, 0x000000)
+
     --Draw page background
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    monitor.setPaletteColor(colors.gray, 0x151515)
     --Draw title
     drawBackground(4, 1, 7, 3, colors.gray)
     drawTitle(4, 1)
@@ -26,7 +29,7 @@ function main()
 
     --Set colors for categories background
     --Draw categories background
-    monitor.setPaletteColor(colors.white, 0xFFFFFF)
+
     drawBackground(1, 1, 2, 6, colors.white)
 
     --Draw categories
@@ -73,9 +76,8 @@ function drawTitle(x, y)
     --Set text size for title
     monitor.setCursorPos(x, y)
     monitor.setTextScale(4.2)
-    monitor.setPaletteColor(colors.blue, 0x0AD9FF)
     --monitor.setPaletteColor(colors.black, 0x151515)
-    monitor.setTextColor(colors.blue)
+    monitor.setTextColor(colors.lightBlue)
     --monitor.setBackgroundColor(colors.black)
     monitor.write("Switch Shop")
 end
@@ -96,16 +98,12 @@ function drawCategories(x, y)
         monitor.setCursorPos(x, y)
 
         if (index % 2 == 0) then
-            monitor.setPaletteColor(colors.blue, 0x0AD9FF)
-            monitor.setPaletteColor(colors.orange, 0x050505)
-            monitor.setTextColor(colors.blue)
-            monitor.setBackgroundColor(colors.orange)
+            monitor.setTextColor(colors.lightBlue)
+            monitor.setBackgroundColor(colors.gray)
             monitor.write(line)
         else
-            monitor.setPaletteColor(colors.white, 0xFFFFFF)
-            monitor.setPaletteColor(colors.red, 0x292929)
             monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.red)
+            monitor.setBackgroundColor(colors.lightGray)
             monitor.write(line)
         end
 
