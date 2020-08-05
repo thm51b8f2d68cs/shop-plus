@@ -1,4 +1,5 @@
 function main()
+    bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
     monitor = peripheral.wrap(side)
@@ -29,7 +30,7 @@ function main()
     drawBackground(1, 1, 2, 6, colors.white)
 
     --Draw categories
-    drawCategories(2, 2)
+    --drawCategories(2, 2)
 
     --Set text size for report bug
     --Draw report bug
@@ -64,10 +65,11 @@ end
 function drawTitle(x, y)
     --Set text size for title
     monitor.setCursorPos(x, y)
-    monitor.setTextScale(4.2)
+    --monitor.setTextScale(4.2)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    monitor.write("Switch Shop")
+    --monitor.write("Switch Shop")
+    bigfont.writeOn(monitor, 2, "Switch Shop", monitor.getCursorPos())
 end
 
 function drawCategories(x, y)
