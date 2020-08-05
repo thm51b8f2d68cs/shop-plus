@@ -26,12 +26,9 @@ function main()
     drawBackground(1, 1, 150, 62, colors.black)
 
     --Draw title
-    drawBackground(37, 2, 138, 11, colors.gray)
     drawTitle(40, 3, "Switch Shop")
 
     --Draw categories background
-
-    drawBackground(2, 2, 31, 46, colors.white)
 
     --Draw categories
     drawCategories(2, 2)
@@ -49,8 +46,11 @@ function main()
 
     --Draw footer background
 
-    --Set text size
+
+
     --Draw made by
+    drawMadeBy(32, 48)
+
     --Draw version
 
     --Draw frames
@@ -68,6 +68,7 @@ function drawBackground(startX, startY, endX, endY, color)
 end
 
 function drawTitle(x, y, title)
+    drawBackground(37, 2, 138, 11, colors.gray)
     --Set text size for title
     monitor.setCursorPos(x, y)
     --monitor.setTextScale(4.2)
@@ -78,6 +79,8 @@ function drawTitle(x, y, title)
 end
 
 function drawCategories(x, y)
+
+    drawBackground(2, 2, 31, 46, colors.white)
     --Set colors for categories text and fill
     --Set text size for categories
 
@@ -94,12 +97,12 @@ function drawCategories(x, y)
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
             drawBackground(x, y, x + 29, y + 2, colors.gray)
-            bigfont.writeOn(monitor, 1, line, x,y)
+            bigfont.writeOn(monitor, 1, line, x, y)
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
             drawBackground(x, y, x + 29, y + 2, colors.lightGray)
-            bigfont.writeOn(monitor, 1, line, x,y)
+            bigfont.writeOn(monitor, 1, line, x, y)
         end
 
         index = index + 1
@@ -109,15 +112,13 @@ function drawCategories(x, y)
 end
 
 function drawCategory()
-
 end
 
 function drawBugReport(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report bug", x, y+1)
-
+    bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
@@ -127,9 +128,11 @@ function drawButtons(color, spacing)
 end
 
 function drawFooter()
+
 end
 
 function drawMadeBy(x, y)
+    drawBackground(x, y, 138, 51, colors.gray)
 end
 
 function drawVersion(x, y)
