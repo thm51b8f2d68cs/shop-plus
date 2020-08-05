@@ -91,7 +91,7 @@ function drawCategories(x, y)
         if (index % 2 == 0) then
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
-            drawBackground(x, y, 29, 3, colors.gray)
+            drawBackground(x, y, 31, 5, colors.gray)
             bigfont.writeOn(monitor, 1, line, x,y)
         else
             monitor.setTextColor(colors.white)
