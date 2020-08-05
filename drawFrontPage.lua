@@ -24,7 +24,7 @@ function main()
 
     --Draw title
     drawBackground(15, 5, 93, 25, colors.gray)
-    drawTitle(15, 5)
+    drawTitle(17, 4)
 
     --Draw categories background
 
