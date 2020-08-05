@@ -15,7 +15,7 @@ function main()
     local terminal = term.redirect(monitor)
 
     monitor.setCursorBlink(false)
-    monitor.setTextSize(0.5)
+    monitor.setTextScale(0.5)
 
 
     --Draw page background
