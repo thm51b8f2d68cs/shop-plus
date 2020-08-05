@@ -22,7 +22,7 @@ function main()
     drawBackground(4, 1, 3, 2, colors.black)
     drawTitle(4, 1)
 
-    monitor.setPaletteColor(colors.black, 0x000000)
+    --monitor.setPaletteColor(colors.black, 0x000000)
 
     --Set colors for categories background
     --Draw categories background
@@ -64,6 +64,7 @@ function setColors()
 end
 
 function drawBackground(startX, startY, endX, endY, color)
+    monitor.setBackgroundColor(color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
 
