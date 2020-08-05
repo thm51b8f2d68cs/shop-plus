@@ -28,7 +28,9 @@ function main()
 
     --Draw categories background
 
-    drawBackground(2, 2, 30, 46, colors.white)
+    drawBackground(2, 2, 31, 46, colors.white)
+    categoriesBGWidth = 29
+    categoriesBGLen = 44
 
     --Draw categories
     drawCategories(2, 2)
@@ -89,10 +91,12 @@ function drawCategories(x, y)
         if (index % 2 == 0) then
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
+            drawBackground(x, y, 29, 3, colors.gray)
             bigfont.writeOn(monitor, 1, line, monitor.getCursorPos())
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
+            drawBackground(x, y, 29, 3, colors.lightGray)
             bigfont.writeOn(monitor, 1, line, monitor.getCursorPos())
         end
 
