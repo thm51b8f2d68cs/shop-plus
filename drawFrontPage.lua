@@ -76,18 +76,18 @@ function drawCategories(x, y)
 
     monitor.setTextScale(1)
 
-    local categories = io.open("categories.txt", "r")
-    local index = 0
+    monitor.setTextColor(colors.lightBlue)
+    monitor.setBackgroundColor(colors.gray)
+    monitor.write("line")
 
-    for line in categories:lines() do
-        line = io.read("*l")
+    --local categories = io.open("categories.txt", "r")
+    --local index = 0
+
+    --for line in categories:lines() do
+        --line = io.read("*l")
         --line = line:sub(1, -2)
 
         monitor.setCursorPos(x, y)
-
-        monitor.setTextColor(colors.lightBlue)
-        monitor.setBackgroundColor(colors.gray)
-        monitor.write(line)
 
 --        if (index % 2 == 0) then
 --            monitor.setTextColor(colors.lightBlue)
@@ -99,10 +99,10 @@ function drawCategories(x, y)
 --            monitor.write(line)
 --        end
 
-        index = index + 1
-        y = y + 3
-    end
-    categories:close()
+        --index = index + 1
+        --y = y + 3
+    --end
+    --categories:close()
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
