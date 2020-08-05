@@ -23,8 +23,8 @@ function main()
     drawBackground(1, 1, 150, 62, colors.black)
 
     --Draw title
-    drawBackground(18, 2, 112, 17, colors.gray)
-    drawTitle(18, 2)
+    drawBackground(19, 2, 112, 10, colors.gray)
+    drawTitle(19, 2)
 
     --Draw categories background
 
