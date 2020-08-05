@@ -20,7 +20,7 @@ function main()
     monitor.setPaletteColor(colors.black, 0x050505)
     --Draw title
     drawBackground(15, 3, 18, 24, colors.black)
-    drawTitle(3, 1)
+    drawTitle(4, 1)
 
 
     --Set colors for categories background
