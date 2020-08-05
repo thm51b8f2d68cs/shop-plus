@@ -15,19 +15,20 @@ function main()
     local terminal = term.redirect(monitor)
 
     monitor.setCursorBlink(false)
+    monitor.setTextSize(0.5)
 
 
     --Draw page background
     --Canvas size is 50x26
-    drawBackground(1, 1, 50, 26, colors.black)
+    drawBackground(1, 1, 51, 19, colors.black)
 
     --Draw title
-    drawBackground(4, 1, 20, 1, colors.gray)
-    drawTitle(4, 1)
+    drawBackground(15, 5, 10, 46, colors.gray)
+    drawTitle(15, 5)
 
     --Draw categories background
 
-    drawBackground(2, 2, 5, 19, colors.white)
+    drawBackground(5, 5, 10, 14, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
