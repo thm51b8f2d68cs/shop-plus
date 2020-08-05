@@ -63,11 +63,12 @@ end
 
 function drawTitle(x, y)
     --Set text size for title
-    monitor.setCursorPos(x, y)
-    monitor.setTextScale(4.2)
-    monitor.setTextColor(colors.lightBlue)
-    monitor.setBackgroundColor(colors.gray)
-    monitor.write("Switch Shop")
+--    monitor.setCursorPos(x, y)
+--    monitor.setTextColor(colors.lightBlue)
+--    monitor.setBackgroundColor(colors.gray)
+--    monitor.write("Switch Shop")
+    local title = paintutils.loadImage("Title")
+    paintutils.drawImage(title, x, y)
 end
 
 function drawCategories(x, y)
@@ -76,33 +77,29 @@ function drawCategories(x, y)
 
     monitor.setTextScale(1)
 
-    monitor.setTextColor(colors.lightBlue)
-    monitor.setBackgroundColor(colors.gray)
-    monitor.write("line")
+    local categories = io.open("categories.txt", "r")
+    local index = 0
 
-    --local categories = io.open("categories.txt", "r")
-    --local index = 0
-
-    --for line in categories:lines() do
-        --line = io.read("*l")
+    for line in categories:lines() do
+        line = io.read("*l")
         --line = line:sub(1, -2)
 
         monitor.setCursorPos(x, y)
 
---        if (index % 2 == 0) then
---            monitor.setTextColor(colors.lightBlue)
---            monitor.setBackgroundColor(colors.gray)
---            monitor.write(line)
---        else
---            monitor.setTextColor(colors.white)
---            monitor.setBackgroundColor(colors.lightGray)
---            monitor.write(line)
---        end
+        if (index % 2 == 0) then
+            monitor.setTextColor(colors.lightBlue)
+            monitor.setBackgroundColor(colors.gray)
+            monitor.write(line)
+        else
+            monitor.setTextColor(colors.white)
+            monitor.setBackgroundColor(colors.lightGray)
+            monitor.write(line)
+        end
 
-        --index = index + 1
-        --y = y + 3
-    --end
-    --categories:close()
+        index = index + 1
+        y = y + 3
+    end
+    categories:close()
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
