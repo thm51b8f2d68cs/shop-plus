@@ -81,7 +81,7 @@ function drawCategories(x, y)
 
     for line in categories:lines() do
         line = io.read("*l")
-        line = line:sub(1, -2)
+        --line = line:sub(1, -2)
 
         monitor.setCursorPos(x, y)
 
@@ -98,6 +98,7 @@ function drawCategories(x, y)
         index = index + 1
         y = y + 3
     end
+    categories:close()
 end
 
 function drawPopularTab(startX, startY, endX, endY, color)
