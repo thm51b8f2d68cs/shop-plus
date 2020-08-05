@@ -116,7 +116,7 @@ function drawBugReport(x, y)
     drawBackground(x, y, 31, 52, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report a bug", x+2, y+2)
+    bigfont.writeOn(monitor, 1, "Report bug", x, y)
 
 end
 
