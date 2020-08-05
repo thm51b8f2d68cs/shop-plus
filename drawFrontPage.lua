@@ -92,12 +92,12 @@ function drawCategories(x, y)
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
             drawBackground(x, y, 29, 3, colors.gray)
-            bigfont.writeOn(monitor, 1, line, monitor.getCursorPos())
+            bigfont.writeOn(monitor, 1, line, x,y)
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
-            drawBackground(x, y, 29, 3, colors.lightGray)
-            bigfont.writeOn(monitor, 1, line, monitor.getCursorPos())
+            drawBackground(x, y, 31, 5, colors.lightGray)
+            bigfont.writeOn(monitor, 1, line, x,y)
         end
 
         index = index + 1
