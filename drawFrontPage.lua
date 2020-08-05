@@ -26,7 +26,7 @@ function main()
     --Set colors for categories background
     --Draw categories background
     monitor.setPaletteColor(colors.white, 0xFFFFFF)
-    drawBackground(2, 2, 2, 6, colors.white)
+    drawBackground(1, 1, 2, 6, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
