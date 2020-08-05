@@ -89,11 +89,11 @@ function drawCategories(x, y)
         if (index % 2 == 0) then
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
-            monitor.write(line)
+            writeOn(monitor, 1, line, monitor.getCursorPos())
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
-            monitor.write(line)
+            writeOn(monitor, 1, line, monitor.getCursorPos())
         end
 
         index = index + 1
