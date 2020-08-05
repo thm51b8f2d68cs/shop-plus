@@ -17,9 +17,9 @@ function main()
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    monitor.setPaletteColor(colors.black, 0x151515)
+    monitor.setPaletteColor(colors.orange, 0x151515)
     --Draw title
-    drawBackground(4, 1, 3, 2, colors.black)
+    drawBackground(4, 1, 3, 2, colors.orange)
     drawTitle(4, 1)
 
     --monitor.setPaletteColor(colors.black, 0x000000)
@@ -64,7 +64,7 @@ function setColors()
 end
 
 function drawBackground(startX, startY, endX, endY, color)
-    monitor.setBackgroundColor(color)
+    --monitor.setBackgroundColor(color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
 
