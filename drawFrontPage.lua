@@ -26,7 +26,7 @@ function main()
     --Set colors for categories background
     --Draw categories background
     --monitor.setPaletteColor(colors.white, 0xFFFFFF)
-    --drawBackground(2, 2, 14, 22, colors.white)
+    --drawBackground(2, 2, 4, 8, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
@@ -70,7 +70,7 @@ function drawTitle(x, y)
     --Set colors for title
     --Set text size for title
     monitor.setCursorPos(x, y)
-    monitor.setTextScale(2.5)
+    monitor.setTextScale(2.8)
     monitor.setPaletteColor(colors.blue, 0x0AD9FF)
     monitor.setPaletteColor(colors.black, 0x050505)
     monitor.setTextColor(colors.blue)
