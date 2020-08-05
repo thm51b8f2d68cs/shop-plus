@@ -81,7 +81,7 @@ function drawCategories(x, y)
     local index = 0
 
     for line in categories:lines() do
-        line = io.read("*l")
+        --line = io.read("*l")
         --line = line:sub(1, -2)
 
         monitor.setCursorPos(x, y)
