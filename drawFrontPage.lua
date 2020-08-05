@@ -113,10 +113,10 @@ function drawCategory()
 end
 
 function drawBugReport(x, y)
-    drawBackground(x, y, 31, 52, colors.lightGray)
+    drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report bug", x, y)
+    bigfont.writeOn(monitor, 1, "Report bug", x+1, y+1)
 
 end
 
