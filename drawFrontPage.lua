@@ -27,7 +27,7 @@ function main()
 
     --Draw categories background
 
-    drawBackground(1, 1, 2, 6, colors.white)
+    drawBackground(2, 2, 5, 19, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
