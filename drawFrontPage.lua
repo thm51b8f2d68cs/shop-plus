@@ -19,14 +19,14 @@ function main()
 
     monitor.setPaletteColor(colors.black, 0x050505)
     --Draw title
-    --drawBackground(4, 1, 8, 10, colors.black)
+    drawBackground(4, 1, 8, 10, colors.black)
     drawTitle(4, 1)
 
 
     --Set colors for categories background
     --Draw categories background
-    --monitor.setPaletteColor(colors.white, 0xFFFFFF)
-    --drawBackground(2, 2, 4, 8, colors.white)
+    monitor.setPaletteColor(colors.white, 0xFFFFFF)
+    drawBackground(2, 2, 4, 8, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
