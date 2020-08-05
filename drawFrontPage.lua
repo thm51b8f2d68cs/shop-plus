@@ -12,21 +12,22 @@ function main()
     monitor.setCursorBlink(false)
 
     --Set colors for page background
-    --monitor.setPaletteColor(colors.black, 0x000000)
+    monitor.setPaletteColor(colors.black, 0x000000)
     --Draw page background
     --Canvas size is 50x26
-    drawBackground(1, 1, 50, 26, 0x000000)
+    drawBackground(1, 1, 50, 26, colors.black)
 
-    m--onitor.setPaletteColor(colors.gray, 0x151515)
+    monitor.setPaletteColor(colors.black, 0x151515)
     --Draw title
-    drawBackground(4, 1, 3, 2, 0x151515)
+    drawBackground(4, 1, 3, 2, colors.black)
     drawTitle(4, 1)
 
+    monitor.setPaletteColor(colors.black, 0x000000)
 
     --Set colors for categories background
     --Draw categories background
-    --monitor.setPaletteColor(colors.white, 0xFFFFFF)
-    drawBackground(1, 1, 2, 6, 0xFFFFFF)
+    monitor.setPaletteColor(colors.white, 0xFFFFFF)
+    drawBackground(1, 1, 2, 6, colors.white)
 
     --Draw categories
     --drawCategories(2, 2)
