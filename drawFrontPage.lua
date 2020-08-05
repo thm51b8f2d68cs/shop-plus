@@ -77,8 +77,6 @@ function drawCategories(x, y)
     --Set colors for categories text and fill
     --Set text size for categories
 
-    monitor.setTextScale(1)
-
     local categories = io.open("categories.txt", "r")
     local index = 0
 
