@@ -69,7 +69,7 @@ function drawTitle(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     --monitor.write("Switch Shop")
-    bigfont.writeOn(monitor, 2, "Switch Shop", monitor.getCursorPos())
+    bigfont.writeOn(monitor, 1, "Switch Shop", monitor.getCursorPos())
 end
 
 function drawCategories(x, y)
