@@ -5,6 +5,8 @@ function main()
     bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
+    shopName = "Switch Shop"
+    shopOwner = "thm51b8f2d68cs"
     monitor = peripheral.wrap(side)
 
     --Define color palette
@@ -26,7 +28,7 @@ function main()
     drawBackground(1, 1, 150, 62, colors.black)
 
     --Draw title
-    drawTitle(40, 3, "Switch Shop")
+    drawTitle(40, 3)
 
     --Draw categories background
 
@@ -67,7 +69,7 @@ function drawBackground(startX, startY, endX, endY, color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
 
-function drawTitle(x, y, title)
+function drawTitle(x, y)
     drawBackground(37, 2, 138, 11, colors.gray)
     --Set text size for title
     monitor.setCursorPos(x, y)
@@ -75,7 +77,7 @@ function drawTitle(x, y, title)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     --monitor.write("Switch Shop")
-    bigfont.writeOn(monitor, 2, title, monitor.getCursorPos())
+    bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
 end
 
 function drawCategories(x, y)
@@ -133,6 +135,9 @@ end
 
 function drawMadeBy(x, y)
     drawBackground(x, y, 138, 51, colors.gray)
+    monitor.setTextColor(colors.lightBlue)
+    monitor.setBackgroundColor(colors.gray)
+    bigfont.writeOn(monitor, 1, shopOwner, x, y + 1)
 end
 
 function drawVersion(x, y)
