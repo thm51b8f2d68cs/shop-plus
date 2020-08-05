@@ -17,7 +17,7 @@ function main()
     --Canvas size is 50x26
     drawBackground(1, 1, 50, 26, colors.black)
 
-    monitor.setPaletteColor(colors.black, 0x050505)
+    monitor.setPaletteColor(colors.black, 0x151515)
     --Draw title
     drawBackground(4, 1, 8, 10, colors.black)
     drawTitle(4, 1)
@@ -72,7 +72,7 @@ function drawTitle(x, y)
     monitor.setCursorPos(x, y)
     monitor.setTextScale(4.2)
     monitor.setPaletteColor(colors.blue, 0x0AD9FF)
-    monitor.setPaletteColor(colors.black, 0x050505)
+    monitor.setPaletteColor(colors.black, 0x151515)
     monitor.setTextColor(colors.blue)
     monitor.setBackgroundColor(colors.black)
     monitor.write("Switch Shop")
