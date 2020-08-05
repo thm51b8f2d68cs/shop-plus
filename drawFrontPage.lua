@@ -6,7 +6,6 @@ function main()
     --Wrap monitor
     side = "top"
     monitor = peripheral.wrap(side)
-    local event, monitor, monX, monY = os.pullEvent("monitor_touch")
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
@@ -133,6 +132,4 @@ function drawVersion(x, y)
 end
 
 
-while true do
-    main()
-end
+main()
