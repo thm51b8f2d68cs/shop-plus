@@ -85,15 +85,19 @@ function drawCategories(x, y)
 
         monitor.setCursorPos(x, y)
 
-        if (index % 2 == 0) then
-            monitor.setTextColor(colors.lightBlue)
-            monitor.setBackgroundColor(colors.gray)
-            monitor.write(line)
-        else
-            monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.lightGray)
-            monitor.write(line)
-        end
+        monitor.setTextColor(colors.lightBlue)
+        monitor.setBackgroundColor(colors.gray)
+        monitor.write(line)
+
+--        if (index % 2 == 0) then
+--            monitor.setTextColor(colors.lightBlue)
+--            monitor.setBackgroundColor(colors.gray)
+--            monitor.write(line)
+--        else
+--            monitor.setTextColor(colors.white)
+--            monitor.setBackgroundColor(colors.lightGray)
+--            monitor.write(line)
+--        end
 
         index = index + 1
         y = y + 3
