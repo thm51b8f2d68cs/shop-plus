@@ -7,6 +7,7 @@ function main()
     side = "top"
     shopName = "Switch Shop"
     shopOwner = "thm51b8f2d68cs"
+    version ="1.0 alpha"
     monitor = peripheral.wrap(side)
 
     --Define color palette
@@ -47,7 +48,7 @@ function main()
     --Draw buttons
 
     --Draw footer background
-
+    drawFooter(33, 48)
 
 
     --Draw made by
@@ -129,18 +130,21 @@ end
 function drawButtons(color, spacing)
 end
 
-function drawFooter()
-
+function drawFooter(x, y)
+    drawBackground(x, y, 138, 51, colors.gray)
 end
 
 function drawMadeBy(x, y)
-    drawBackground(x, y, 138, 51, colors.gray)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     bigfont.writeOn(monitor, 1, shopOwner, x, y + 1)
 end
 
 function drawVersion(x, y)
+    drawBackground(x, y, 138, 51, colors.gray)
+    monitor.setTextColor(colors.lightBlue)
+    monitor.setBackgroundColor(colors.gray)
+    bigfont.writeOn(monitor, 1, version, x - #version, y + 1)
 end
 
 
