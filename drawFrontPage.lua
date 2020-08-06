@@ -40,8 +40,8 @@ function main()
     --Draw buttons
     local spacing = 2
     local buttonAnchor = 35
-    drawUpButton(135, 30, 5, 1)
-    drawDownButton(135, 40, 5 ,1)
+    drawUpButton(135, 30, 5, 5)
+    drawDownButton(135, 40, 5, 5)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -115,7 +115,7 @@ function drawPopularTab(startX, startY, endX, endY)
 end
 
 function drawUpButton(x, y, width, height)
-    drawBackground(x, y, 140, 31, colors.gray)
+    drawBackground(x, y, x + width, y + height, colors.gray)
     --drawUpButtonTriangle(x, y, width, height)
 end
 
@@ -139,7 +139,7 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
 end
 
 function drawDownButton(x, y, width, height)
-    drawBackground(x, y, x + width, y + width, colors.gray)
+    drawBackground(x, y, x + width, y + height, colors.gray)
     --drawDownButtonTriangle(x, y, width, height)
 end
 
