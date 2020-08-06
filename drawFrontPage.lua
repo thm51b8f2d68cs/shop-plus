@@ -114,13 +114,13 @@ end
 
 function drawUpButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    --drawUpButtonTriangle(x, y, width, height)
+    drawUpButtonTriangle(x, y, width, height)
 end
 
 function drawUpButtonTriangle(startX, startY, endX, endY)
     buttonWidth = endX - startX
     buttonHeight = endY - startY
-    middleXOfButton = (buttonWidth / 2) + 1
+    middleXOfButton = (endX / 2) + 1
     --Draw middle of triangle
     for y = startY + 1, endY - 1, 1 do 
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
@@ -138,13 +138,13 @@ end
 
 function drawDownButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    --drawDownButtonTriangle(x, y, width, height)
+    drawDownButtonTriangle(x, y, width, height)
 end
 
 function drawDownButtonTriangle(startX, startY, endX, endY)
     buttonWidth = endX - startX
     buttonHeight = endY - startY
-    middleXOfButton = (buttonWidth / 2) + 1
+    middleXOfButton = (endX / 2) + 1
     --Draw middle of triangle
     for y = endY - 1, startY + 1, -1 do 
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
