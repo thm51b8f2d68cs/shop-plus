@@ -39,9 +39,9 @@ function main()
     --Draw popular items in frames of popular tab
     --Draw buttons
     local spacing = 2
-    local buttonAnchor = 30
-    drawUpButton(135, buttonAnchor - spacing, 10, 5)
-    drawDownButton(135, buttonAnchor, 10 ,5)
+    local buttonAnchor = 35
+    drawUpButton(137, 30, 5, 1)
+    drawDownButton(137, 40, 5 ,1)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
