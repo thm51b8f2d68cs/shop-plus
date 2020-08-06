@@ -2,3 +2,5 @@ Block
 Decoration
 Combat
 Resource
+Tools
+Potions
