@@ -52,7 +52,7 @@ function main()
 
 
     --Draw made by
-    drawMadeBy(33, 48)
+    drawMadeBy(34, 48)
 
     --Draw version
     drawVersion(155 - (#version * 5), 48)
