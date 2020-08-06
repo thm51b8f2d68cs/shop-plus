@@ -38,8 +38,8 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
-    drawUpButton(134, 34, 7, 4)
-    drawDownButton(134, 40, 7, 4)
+    drawUpButton(134, 34, 8, 4)
+    drawDownButton(134, 40, 8, 4)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -127,13 +127,13 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw left angle
-    -- for x = middleXOfButton, startX + 1, -1 do
-    --     paintutils.drawPixel(x, endY - 1, colors.lightBlue)
-    -- end
+    for x = middleXOfButton, startX + 1, -1 do
+        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    end
     --Draw right angle
-    -- for x = middleXOfButton, endX - 1, 1 do
-    --     paintutils.drawPixel(x, endY - 1, colors.lightBlue)
-    -- end
+    for x = middleXOfButton, endX - 1, 1 do
+        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    end
 end
 
 function drawDownButton(x, y, width, height)
@@ -151,13 +151,13 @@ function drawDownButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw left angle
-    -- for x = middleXOfButton, startX + 1, -1 do
-    --     paintutils.drawPixel(x, startY + 1, colors.lightBlue)
-    -- end
+    for x = middleXOfButton, startX + 1, -1 do
+        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    end
     --Draw right angle
-    -- for x = middleXOfButton, endX - 1, 1 do
-    --     paintutils.drawPixel(x, startY + 1, colors.lightBlue)
-    -- end
+    for x = middleXOfButton, endX - 1, 1 do
+        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    end
 end
 
 function drawFooter(x, y)
