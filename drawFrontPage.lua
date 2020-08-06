@@ -114,7 +114,7 @@ end
 
 function drawUpButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    drawUpButtonTriangle(x, y, width, height)
+    drawUpButtonTriangle(x, y, x + width, y + height)
 end
 
 function drawUpButtonTriangle(startX, startY, endX, endY)
@@ -138,7 +138,7 @@ end
 
 function drawDownButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    drawDownButtonTriangle(x, y, width, height)
+    drawDownButtonTriangle(x, y, x + width, y + height)
 end
 
 function drawDownButtonTriangle(startX, startY, endX, endY)
