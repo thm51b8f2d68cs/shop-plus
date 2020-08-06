@@ -55,7 +55,7 @@ function main()
     drawMadeBy(33, 48)
 
     --Draw version
-    drawVersion(145 - (#version * 5), 48)
+    drawVersion(160 - (#version * 5), 48)
 
     --Draw frames
 
