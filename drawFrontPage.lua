@@ -114,7 +114,9 @@ end
 
 function drawUpButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    drawUpButtonTriangle(x, y, x + width, y + height)
+    --drawUpButtonTriangle(x, y, x + width, y + height)
+    upButton = paintutils.loadImage("upTriangle.nft")
+    paintutils.drawImage(upButton, x, y)
 end
 
 function drawUpButtonTriangle(startX, startY, endX, endY)
@@ -128,20 +130,14 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw angles
-    local spacing = 1
-    while (spacing < buttonWidth / 2) do
-        for y = endY - 1, startY + 1, -1 do
-            for x = startX + spacing, endX - spacing, -1 do
-                paintutils.drawPixel(x, y, colors.lightBlue) 
-            end
-        end
-    end
-
+    
 end
 
 function drawDownButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
-    drawDownButtonTriangle(x, y, x + width, y + height)
+    --drawDownButtonTriangle(x, y, x + width, y + height)
+    downButton = paintutils.loadImage("downTriangle.nft")
+    paintutils.drawImage(downButton, x, y)
 end
 
 function drawDownButtonTriangle(startX, startY, endX, endY)
@@ -154,14 +150,7 @@ function drawDownButtonTriangle(startX, startY, endX, endY)
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
     
-    local spacing = 1
-    while (spacing < buttonWidth / 2) do
-        for y = startY + 1, endY - 1, 1 do
-            for x = startX + spacing, endX - spacing, -1 do
-                paintutils.drawPixel(x, y, colors.lightBlue) 
-            end
-        end
-    end
+    
 end
 
 function drawFooter(x, y)
