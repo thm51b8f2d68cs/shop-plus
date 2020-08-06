@@ -55,6 +55,7 @@ function main()
     drawMadeBy(33, 48)
 
     --Draw version
+    drawVersion(150 - (#version * 5), 48)
 
     --Draw frames
 
@@ -141,10 +142,9 @@ function drawMadeBy(x, y)
 end
 
 function drawVersion(x, y)
-    drawBackground(x, y, 138, 51, colors.gray)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 1, version, x - #version, y + 1)
+    bigfont.writeOn(monitor, 1, version, x, y + 1)
 end
 
 
