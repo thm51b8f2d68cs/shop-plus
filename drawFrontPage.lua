@@ -38,10 +38,10 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
-    local spacing = 5
-    local buttonAnchor = 44
-    drawUpButton(150, buttonAnchor - spacing, 10, 10)
-    drawDownButton(150, buttonAnchor, 10 ,10)
+    local spacing = 2
+    local buttonAnchor = 30
+    drawUpButton(135, buttonAnchor - spacing, 10, 5)
+    drawDownButton(135, buttonAnchor, 10 ,5)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -121,7 +121,7 @@ end
 
 function drawUpButton(x, y, width, height)
     drawBackground(x, y, x + width, y + width, colors.gray)
-    drawUpButtonTriangle(x, y, width, height)
+    --drawUpButtonTriangle(x, y, width, height)
 end
 
 function drawUpButtonTriangle(startX, startY, endX, endY)
@@ -145,7 +145,7 @@ end
 
 function drawDownButton(x, y, width, height)
     drawBackground(x, y, x + width, y + width, colors.gray)
-    drawDownButtonTriangle(x, y, width, height)
+    --drawDownButtonTriangle(x, y, width, height)
 end
 
 function drawDownButtonTriangle(startX, startY, endX, endY)
