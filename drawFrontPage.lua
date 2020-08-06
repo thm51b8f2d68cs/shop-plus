@@ -137,7 +137,7 @@ end
 function drawMadeBy(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 1, shopOwner, x, y + 1)
+    bigfont.writeOn(monitor, 1, "Made by: " .. shopOwner, x, y + 1)
 end
 
 function drawVersion(x, y)
