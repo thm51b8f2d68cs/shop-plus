@@ -121,23 +121,28 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
     buttonWidth = endX - startX
     buttonHeight = endY - startY
     middleXOfButton = (buttonWidth / 2) + startX
+
     --Draw middle of triangle
     for y = startY + 1, endY - 1, 1 do 
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
     
     --Draw left angle
+    local layerLength = middleXOfButton - (startX + 1)
     for y = endY - 1, startY + 2, -1 do
         for x = middleXOfButton, startX + 1, -1 do
-            paintutils.drawPixel(x, y, colors.lightBlue)
+            paintutils.drawPixel(layerLength, y, colors.lightBlue)
         end
+        layerLength = layerLength - 1
     end
 
     --Draw right angle
+    layerLength = middleXOfButton - (startX + 1)
     for y = endY - 1, startY + 2, -1 do
         for x = middleXOfButton, endX, 1 do
-            paintutils.drawPixel(x, y, colors.lightBlue)
+            paintutils.drawPixel(layerLength, y, colors.lightBlue)
         end
+        layerLength = layerLength - 1
     end
 
 end
@@ -158,17 +163,21 @@ function drawDownButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw left angle
+    local layerLength = middleXOfButton - (startX + 1)
     for y = startY + 1, endY - 2, 1 do
         for x = middleXOfButton, startX + 1, -1 do
-            paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+            paintutils.drawPixel(x, y, colors.lightBlue)
         end
+        layerLength = layerLength - 1
     end
 
     --Draw right angle
+    layerLength = middleXOfButton - (startX + 1)
     for y = startY + 1, endY - 2, 1 do
         for x = middleXOfButton, endX, 1 do
-            paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+            paintutils.drawPixel(x, y, colors.lightBlue)
         end
+        layerLength = layerLength - 1
     end
 end
 
