@@ -72,7 +72,7 @@ function drawBackground(startX, startY, endX, endY, color)
 end
 
 function drawTitle(x, y)
-    drawBackground(37, 2, 138, 11, colors.gray)
+    drawBackground(33, 2, 142, 11, colors.gray)
     --Set text size for title
     monitor.setCursorPos(x, y)
     --monitor.setTextScale(4.2)
@@ -132,7 +132,7 @@ function drawButtons(color, spacing)
 end
 
 function drawFooter(x, y)
-    drawBackground(x, y, 138, 51, colors.gray)
+    drawBackground(x, y, 142, 51, colors.gray)
 end
 
 function drawMadeBy(x, y)
