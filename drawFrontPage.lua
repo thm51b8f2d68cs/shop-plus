@@ -115,7 +115,7 @@ function drawPopularTab(startX, startY, endX, endY)
 end
 
 function drawUpButton(x, y, width, height)
-    drawBackground(x, y, x + width, y + width, colors.gray)
+    drawBackground(x, y, 140, 31, colors.gray)
     --drawUpButtonTriangle(x, y, width, height)
 end
 
