@@ -38,8 +38,8 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
-    drawUpButton(134, 32, 9, 5)
-    drawDownButton(134, 40, 9, 5)
+    drawUpButton(133, 32, 9, 5)
+    drawDownButton(133, 40, 9, 5)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -120,20 +120,26 @@ end
 function drawUpButtonTriangle(startX, startY, endX, endY)
     buttonWidth = endX - startX
     buttonHeight = endY - startY
-    middleXOfButton = ((buttonWidth / 2) + 1) + startX
+    middleXOfButton = (buttonWidth / 2) + startX
     --Draw middle of triangle
     for y = startY + 1, endY - 1, 1 do 
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
     
     --Draw left angle
-    for x = middleXOfButton, startX + 1, -1 do
-        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    for y = endY - 1, startY + 2, -1 do
+        for x = middleXOfButton, startX + 1, -1 do
+            paintutils.drawPixel(x, y, colors.lightBlue)
+        end
     end
+
     --Draw right angle
-    for x = middleXOfButton, endX, 1 do
-        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    for y = endY - 1, startY + 2, -1 do
+        for x = middleXOfButton, endX, 1 do
+            paintutils.drawPixel(x, y, colors.lightBlue)
+        end
     end
+
 end
 
 function drawDownButton(x, y, width, height)
@@ -144,19 +150,25 @@ end
 function drawDownButtonTriangle(startX, startY, endX, endY)
     buttonWidth = endX - startX
     buttonHeight = endY - startY
-    middleXOfButton = ((buttonWidth / 2) + 1) + startX
+    middleXOfButton = (buttonWidth / 2) + startX
+
     --Draw middle of triangle
     for y = endY - 1, startY + 1, -1 do 
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
     
     --Draw left angle
-    for x = middleXOfButton, startX + 1, -1 do
-        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    for y = startY + 1, endY - 2, 1 do
+        for x = middleXOfButton, startX + 1, -1 do
+            paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+        end
     end
+
     --Draw right angle
-    for x = middleXOfButton, endX, 1 do
-        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    for y = startY + 1, endY - 2, 1 do
+        for x = middleXOfButton, endX, 1 do
+            paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+        end
     end
 end
 
