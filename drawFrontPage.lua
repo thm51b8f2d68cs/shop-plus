@@ -40,8 +40,8 @@ function main()
     --Draw buttons
     local spacing = 2
     local buttonAnchor = 35
-    drawUpButton(133, 32, 7, 5)
-    drawDownButton(133, 40, 7, 5)
+    drawUpButton(134, 32, 7, 4)
+    drawDownButton(134, 40, 7, 4)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
