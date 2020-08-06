@@ -38,8 +38,8 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
-    drawUpButton(133, 32, 9, 5)
-    drawDownButton(133, 40, 9, 5)
+    drawUpButton(134, 32, 9, 5)
+    drawDownButton(134, 40, 9, 5)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
