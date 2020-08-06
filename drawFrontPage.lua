@@ -7,7 +7,7 @@ function main()
     side = "top"
     shopName = "Switch Shop"
     shopOwner = "thm51b8f2d68cs"
-    version ="1.0 alpha"
+    version = "1.0 alpha"
     monitor = peripheral.wrap(side)
 
     --Define color palette
@@ -23,42 +23,25 @@ function main()
     monitor.setCursorBlink(false)
     monitor.setTextScale(0.5)
 
-
     --Draw page background
-    --Canvas size is 50x26
     drawBackground(1, 1, 150, 62, colors.black)
-
     --Draw title
     drawTitle(40, 3)
-
-    --Draw categories background
-
     --Draw categories
     drawCategories(2, 2)
-
-    --Set text size for report bug
     --Draw report bug
     drawBugReport(2, 48)
-
     --Draw popular tab
-
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
-
     --Draw buttons
-
     --Draw footer background
     drawFooter(33, 48)
-
-
     --Draw made by
     drawMadeBy(34, 48)
-
     --Draw version
     drawVersion(160 - (#version * 5), 48)
-
     --Draw frames
-
     --term.redirect(terminal)
 end
 
