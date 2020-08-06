@@ -127,13 +127,13 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw left angle
-    for x = middleXOfButton, startX + 1, -1 do
-        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
-    end
+    -- for x = middleXOfButton, startX + 1, -1 do
+    --     paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    -- end
     --Draw right angle
-    for x = middleXOfButton, endX - 1, 1 do
-        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
-    end
+    -- for x = middleXOfButton, endX - 1, 1 do
+    --     paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    -- end
 end
 
 function drawDownButton(x, y, width, height)
@@ -151,13 +151,13 @@ function drawDownButtonTriangle(startX, startY, endX, endY)
     end
     
     --Draw left angle
-    for x = middleXOfButton, startX + 1, -1 do
-        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
-    end
+    -- for x = middleXOfButton, startX + 1, -1 do
+    --     paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    -- end
     --Draw right angle
-    for x = middleXOfButton, endX - 1, 1 do
-        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
-    end
+    -- for x = middleXOfButton, endX - 1, 1 do
+    --     paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    -- end
 end
 
 function drawFooter(x, y)
