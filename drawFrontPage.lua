@@ -5,6 +5,9 @@ function main()
     bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
+    --Wrap inventory
+    inventory = peripheral.wrap("bottom")
+    --stock = inventory.list()
     shopName = "Switch Shop"
     shopOwner = "thm51b8f2d68cs"
     version = "1.0 alpha"
@@ -35,6 +38,10 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
+    local spacing = 5
+    local buttonAnchor = 44
+    drawUpButton(150, buttonAnchor - spacing, 10, 10)
+    drawDownButton(150, buttonAnchor, 10 ,10)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -108,10 +115,56 @@ function drawBugReport(x, y)
     bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
 end
 
-function drawPopularTab(startX, startY, endX, endY, color)
+function drawPopularTab(startX, startY, endX, endY)
+
 end
 
-function drawButtons(color, spacing)
+function drawUpButton(x, y, width, height)
+    drawBackground(x, y, x + width, y + width, colors.gray)
+    drawUpButtonTriangle(x, y, width, height)
+end
+
+function drawUpButtonTriangle(startX, startY, endX, endY)
+    buttonWidth = endX - startX
+    buttonHeight = endY - startY
+    middleXOfButton = (buttonWidth / 2) + 1
+    --Draw middle of triangle
+    for y = startY + 1, endY - 1, 1 do 
+        paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
+    end
+    
+    --Draw left angle
+    for x = middleXOfButton, startX + 1, -1 do
+        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    end
+    --Draw right angle
+    for x = middleXOfButton, endX - 1, 1 do
+        paintutils.drawPixel(x, endY - 1, colors.lightBlue)
+    end
+end
+
+function drawDownButton(x, y, width, height)
+    drawBackground(x, y, x + width, y + width, colors.gray)
+    drawDownButtonTriangle(x, y, width, height)
+end
+
+function drawDownButtonTriangle(startX, startY, endX, endY)
+    buttonWidth = endX - startX
+    buttonHeight = endY - startY
+    middleXOfButton = (buttonWidth / 2) + 1
+    --Draw middle of triangle
+    for y = endY - 1, startY + 1, -1 do 
+        paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
+    end
+    
+    --Draw left angle
+    for x = middleXOfButton, startX + 1, -1 do
+        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    end
+    --Draw right angle
+    for x = middleXOfButton, endX - 1, 1 do
+        paintutils.drawPixel(x, startY + 1, colors.lightBlue)
+    end
 end
 
 function drawFooter(x, y)
@@ -130,5 +183,39 @@ function drawVersion(x, y)
     bigfont.writeOn(monitor, 1, version, x, y + 1)
 end
 
+function parseItems()
+    local items = io.open("items.txt", "w")
+    for item in inventory.list() do
+        items:write(textutils.serialize(item))
+    end
+    items:close()
+end
+
+function formatItems()
+    local items = io.open("items.txt", "rw")
+    local data = items.read("*a")
+    local catalog = textutils.unserialize(data)
+    for item in catalog do
+        item.purchases = "0"
+    end
+    
+    items:write(textutils.serialize(catalog))
+    items:close()
+
+end
+
+function logPurchase(itemBought)
+    local items = io.open("items.txt", "rw")
+    local data = items.read("*a")
+    local catalog = textutils.unserialize(data)
+    for item in catalog do
+        if (item.name == itemBought.name) then
+            item.purchases = item.purchases + 1
+        end
+    end
+
+    items:write(textutils.serialize(catalog))
+    items:close()
+end
 
 main()
