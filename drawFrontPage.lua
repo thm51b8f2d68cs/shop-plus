@@ -40,8 +40,8 @@ function main()
     --Draw buttons
     local spacing = 2
     local buttonAnchor = 35
-    drawUpButton(137, 30, 5, 1)
-    drawDownButton(137, 40, 5 ,1)
+    drawUpButton(135, 30, 5, 1)
+    drawDownButton(135, 40, 5 ,1)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -57,7 +57,6 @@ function setColors()
 end
 
 function drawBackground(startX, startY, endX, endY, color)
-    --monitor.setBackgroundColor(color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
 
@@ -65,10 +64,8 @@ function drawTitle(x, y)
     drawBackground(33, 2, 142, 11, colors.gray)
     --Set text size for title
     monitor.setCursorPos(x, y)
-    --monitor.setTextScale(4.2)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    --monitor.write("Switch Shop")
     bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
 end
 
@@ -82,8 +79,6 @@ function drawCategories(x, y)
     local index = 0
 
     for line in categories:lines() do
-        --line = io.read("*l")
-        --line = line:sub(1, -2)
 
         monitor.setCursorPos(x, y)
 
