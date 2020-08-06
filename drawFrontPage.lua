@@ -38,9 +38,7 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw buttons
-    local spacing = 2
-    local buttonAnchor = 35
-    drawUpButton(134, 32, 7, 4)
+    drawUpButton(134, 33, 7, 4)
     drawDownButton(134, 40, 7, 4)
     --Draw footer background
     drawFooter(33, 48)
