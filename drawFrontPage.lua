@@ -115,8 +115,8 @@ end
 function drawUpButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
     --drawUpButtonTriangle(x, y, x + width, y + height)
-    upButton = paintutils.loadImage("upTriangle.nft")
-    paintutils.drawImage(upButton, x, y)
+    upButton = paintutils.loadImage("upTriangle.nfp")
+    paintutils.drawImage(upButton, x + 1, y)
 end
 
 function drawUpButtonTriangle(startX, startY, endX, endY)
@@ -136,8 +136,8 @@ end
 function drawDownButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
     --drawDownButtonTriangle(x, y, x + width, y + height)
-    downButton = paintutils.loadImage("downTriangle.nft")
-    paintutils.drawImage(downButton, x, y)
+    downButton = paintutils.loadImage("downTriangle.nfp")
+    paintutils.drawImage(downButton, x + 1, y + 1)
 end
 
 function drawDownButtonTriangle(startX, startY, endX, endY)
