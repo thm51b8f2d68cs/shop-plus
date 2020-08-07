@@ -9,7 +9,7 @@ function main()
     shopOwner = "thm51b8f2d68cs"
     version = "1.0 alpha"
     monitor = peripheral.wrap(side)
-    monitorWidth, monitorHeight = shell.run("monitor-ident 0.5")
+    monitorWidth, monitorHeight = monitor.getSize()
 
 --    Wrap inventory
 --    inventory = peripheral.wrap("bottom")
