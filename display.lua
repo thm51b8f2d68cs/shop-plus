@@ -5,13 +5,14 @@ function main()
     bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
-    --Wrap inventory
-    inventory = peripheral.wrap("bottom")
-    --stock = inventory.list()
     shopName = "Switch Shop"
     shopOwner = "thm51b8f2d68cs"
     version = "1.0 alpha"
     monitor = peripheral.wrap(side)
+
+    --Wrap inventory
+    inventory = peripheral.wrap("bottom")
+    inventory = require("inventoryManager.lua")
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
@@ -46,7 +47,8 @@ function main()
     drawMadeBy(34, 48)
     --Draw version
     drawVersion(160 - (#version * 5), 48)
-    --Draw frames
+    --Draw main page
+    drawMainPage(33,13)
     --term.redirect(terminal)
 end
 
@@ -108,7 +110,11 @@ function drawBugReport(x, y)
     bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
 end
 
-function drawPopularTab(startX, startY, endX, endY)
+function drawMainPage(x, y)
+    --Draw main page background()
+    drawBackground(x, y, 142, 49, colors.lightGray)
+    --Display item address, price, and description
+    --Display image of item
 
 end
 
@@ -167,41 +173,6 @@ function drawVersion(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
     bigfont.writeOn(monitor, 1, version, x, y + 1)
-end
-
-function parseItems()
-    local items = io.open("items.txt", "w")
-    for item in inventory.list() do
-        items:write(textutils.serialize(item))
-    end
-    items:close()
-end
-
-function formatItems()
-    local items = io.open("items.txt", "rw")
-    local data = items.read("*a")
-    local catalog = textutils.unserialize(data)
-    for item in catalog do
-        item.purchases = "0"
-    end
-    
-    items:write(textutils.serialize(catalog))
-    items:close()
-
-end
-
-function logPurchase(itemBought)
-    local items = io.open("items.txt", "rw")
-    local data = items.read("*a")
-    local catalog = textutils.unserialize(data)
-    for item in catalog do
-        if (item.name == itemBought.name) then
-            item.purchases = item.purchases + 1
-        end
-    end
-
-    items:write(textutils.serialize(catalog))
-    items:close()
 end
 
 main()
