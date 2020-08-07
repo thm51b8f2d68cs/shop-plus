@@ -124,13 +124,13 @@ function drawCategories(x, y)
             monitor.setBackgroundColor(colors.gray)
             drawBackground(x, y, x + 29, y + 2, colors.gray)
             bigfont.writeOn(monitor, 1, line, x, y)
-            ammountOfCategories.index + 1 = { "x", x, "y", y, "category", line }
+            ammountOfCategories.index = { "x", x, "y", y, "category", line }
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
             drawBackground(x, y, x + 29, y + 2, colors.lightGray)
             bigfont.writeOn(monitor, 1, line, x, y)
-            ammountOfCategories.index + 1 = { "x", x, "y", y, "category", line }
+            ammountOfCategories.index = { "x", x, "y", y, "category", line }
         end
 
         index = index + 1
