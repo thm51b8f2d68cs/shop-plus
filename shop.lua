@@ -27,150 +27,186 @@ function main()
     monitor.setCursorBlink(false)
     monitor.setTextScale(0.5)
 
+    --Draw page background
+    drawBackground(1, 1, 150, 62, colors.black)
+    --Draw title
+    drawTitle(40, 3)
+    --Draw categories
+    local categories = drawCategories(2, 2)
+    --Draw report bug
+    drawBugReport(2, 48)
+    --Draw popular tab
+    --Color of each item frame will come from the frame info
+    --Draw popular items in frames of popular tab
+    --Draw footer background
+    drawFooter(33, 48)
+    --Draw made by
+    drawMadeBy(34, 48)
+    --Draw version
+    drawVersion(160 - (#version * 5), 48)
+    --Draw main page
+    drawMainPage(33, 13)
+    --Draw buttons
+    drawUpButton(132, 32, 9, 5)
+    drawDownButton(132, 40, 9, 5)
+    --term.redirect(terminal)
     while (1) do
-        --Draw page background
-        drawBackground(1, 1, 150, 62, colors.black)
-        --Draw title
-        drawTitle(40, 3)
-        --Draw categories
-        drawCategories(2, 2)
-        --Draw report bug
-        drawBugReport(2, 48)
-        --Draw popular tab
-        --Color of each item frame will come from the frame info
-        --Draw popular items in frames of popular tab
-        --Draw footer background
-        drawFooter(33, 48)
-        --Draw made by
-        drawMadeBy(34, 48)
-        --Draw version
-        drawVersion(160 - (#version * 5), 48)
-        --Draw main page
-        drawMainPage(33, 13)
-        --Draw buttons
-        drawUpButton(132, 32, 9, 5)
-        drawDownButton(132, 40, 9, 5)
-        --term.redirect(terminal)
+        pageToDisplay = mainTouchListener()
     end
 end
 
-function setColors()
-    monitor.setPaletteColor(colors)
+function mainTouchListener()
+    local userTouch, x, y = os.pullEvent("monitor_touch")
+    categoryTouchListener(x, y, categories)
+    --Check if a category has been selected
+    --Display category items on main page
+
+    --Check if a main page tile has been selected
+    if (x >= 2 and x <= 31 and y >= 2 and y <= 46) then
+
+    elseif () then
+
+    elseif () then
+
+    elseif () then
+
+    elseif () then
+
+    else
+    end
 end
 
-function drawBackground(startX, startY, endX, endY, color)
-    paintutils.drawFilledBox(startX, startY, endX, endY, color)
-end
+function categoryTouchListener(x, y, categories)
+    for category in categories do
+        if (x >= category.x and x <= category.x + 29 and y >= category.y and y <= category.y + 2) then
+            userChoice = category.category
+        end
+    end
 
-function drawTitle(x, y)
-    drawBackground(33, 2, 142, 11, colors.gray)
-    --Set text size for title
-    monitor.setCursorPos(x, y)
-    monitor.setTextColor(colors.lightBlue)
-    monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
-end
+    if ()
+    end
 
-function drawCategories(x, y)
-
-    drawBackground(2, 2, 31, 46, colors.white)
-    --Set colors for categories text and fill
-    --Set text size for categories
-
-    local categories = io.open("categories.txt", "r")
-    local index = 0
-
-    for line in categories:lines() do
-
-        monitor.setCursorPos(x, y)
-
-        if (index % 2 == 0) then
-            monitor.setTextColor(colors.lightBlue)
-            monitor.setBackgroundColor(colors.gray)
-            drawBackground(x, y, x + 29, y + 2, colors.gray)
-            bigfont.writeOn(monitor, 1, line, x, y)
-        else
-            monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.lightGray)
-            drawBackground(x, y, x + 29, y + 2, colors.lightGray)
-            bigfont.writeOn(monitor, 1, line, x, y)
+        function setColors()
+            monitor.setPaletteColor(colors)
         end
 
-        index = index + 1
-        y = y + 3
-    end
-    categories:close()
-end
+        function drawBackground(startX, startY, endX, endY, color)
+            paintutils.drawFilledBox(startX, startY, endX, endY, color)
+        end
 
-function drawCategory()
-end
+        function drawTitle(x, y)
+            drawBackground(33, 2, 142, 11, colors.gray)
+            --Set text size for title
+            monitor.setCursorPos(x, y)
+            monitor.setTextColor(colors.lightBlue)
+            monitor.setBackgroundColor(colors.gray)
+            bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
+        end
 
-function drawBugReport(x, y)
-    drawBackground(x, y, 31, 51, colors.lightGray)
-    monitor.setTextColor(colors.white)
-    monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
-end
+        function drawCategories(x, y)
 
-function drawMainPage(x, y)
-    --Draw main page background()
-    drawBackground(x, y, 142, 46, colors.lightGray)
-    --Display item address, price, and description
-    --Display image of item
-end
+            drawBackground(2, 2, 31, 46, colors.white)
+            --Set colors for categories text and fill
+            --Set text size for categories
 
-function drawUpButton(x, y, width, height)
-    drawBackground(x, y, x + width, y + height, colors.gray)
-    --drawUpButtonTriangle(x, y, x + width, y + height)
-    upButton = paintutils.loadImage("upTriangle.nfp")
-    paintutils.drawImage(upButton, x + 1, y)
-end
+            local categories = io.open("categories.txt", "r")
+            local index = 0
 
-function drawUpButtonTriangle(startX, startY, endX, endY)
-    buttonWidth = endX - startX
-    buttonHeight = endY - startY
-    middleXOfButton = (buttonWidth / 2) + startX
+            for line in categories:lines() do
 
-    --Draw middle of triangle
-    for y = startY + 1, endY - 1, 1 do
-        paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
-    end
+                monitor.setCursorPos(x, y)
+                ammountOfCategories = {}
 
-    --Draw angles
-end
+                if (index % 2 == 0) then
+                    monitor.setTextColor(colors.lightBlue)
+                    monitor.setBackgroundColor(colors.gray)
+                    drawBackground(x, y, x + 29, y + 2, colors.gray)
+                    bigfont.writeOn(monitor, 1, line, x, y)
+                    ammountOfCategories.index + 1 = { "x", x, "y", y, "category", line }
+                else
+                    monitor.setTextColor(colors.white)
+                    monitor.setBackgroundColor(colors.lightGray)
+                    drawBackground(x, y, x + 29, y + 2, colors.lightGray)
+                    bigfont.writeOn(monitor, 1, line, x, y)
+                    ammountOfCategories.index + 1 = { "x", x, "y", y, "category", line }
+                end
 
-function drawDownButton(x, y, width, height)
-    drawBackground(x, y, x + width, y + height, colors.gray)
-    --drawDownButtonTriangle(x, y, x + width, y + height)
-    downButton = paintutils.loadImage("downTriangle.nfp")
-    paintutils.drawImage(downButton, x + 1, y + 1)
-end
+                index = index + 1
+                y = y + 3
+            end
+            categories:close()
+            return ammountOfCategories
+        end
 
-function drawDownButtonTriangle(startX, startY, endX, endY)
-    buttonWidth = endX - startX
-    buttonHeight = endY - startY
-    middleXOfButton = (buttonWidth / 2) + startX
+        function drawCategory()
+        end
 
-    --Draw middle of triangle
-    for y = endY - 1, startY + 1, -1 do
-        paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
-    end
-end
+        function drawBugReport(x, y)
+            drawBackground(x, y, 31, 51, colors.lightGray)
+            monitor.setTextColor(colors.white)
+            monitor.setBackgroundColor(colors.lightGray)
+            bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
+        end
 
-function drawFooter(x, y)
-    drawBackground(x, y, 142, 51, colors.gray)
-end
+        function drawMainPage(x, y)
+            --Draw main page background()
+            drawBackground(x, y, 142, 46, colors.lightGray)
+            --Display item address, price, and description
+            --Display image of item
+        end
 
-function drawMadeBy(x, y)
-    monitor.setTextColor(colors.lightBlue)
-    monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 1, "Made by: " .. shopOwner, x, y + 1)
-end
+        function drawUpButton(x, y, width, height)
+            drawBackground(x, y, x + width, y + height, colors.gray)
+            --drawUpButtonTriangle(x, y, x + width, y + height)
+            upButton = paintutils.loadImage("upTriangle.nfp")
+            paintutils.drawImage(upButton, x + 1, y)
+        end
 
-function drawVersion(x, y)
-    monitor.setTextColor(colors.lightBlue)
-    monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 1, version, x, y + 1)
-end
+        function drawUpButtonTriangle(startX, startY, endX, endY)
+            buttonWidth = endX - startX
+            buttonHeight = endY - startY
+            middleXOfButton = (buttonWidth / 2) + startX
 
-main()
+            --Draw middle of triangle
+            for y = startY + 1, endY - 1, 1 do
+                paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
+            end
+
+            --Draw angles
+        end
+
+        function drawDownButton(x, y, width, height)
+            drawBackground(x, y, x + width, y + height, colors.gray)
+            --drawDownButtonTriangle(x, y, x + width, y + height)
+            downButton = paintutils.loadImage("downTriangle.nfp")
+            paintutils.drawImage(downButton, x + 1, y + 1)
+        end
+
+        function drawDownButtonTriangle(startX, startY, endX, endY)
+            buttonWidth = endX - startX
+            buttonHeight = endY - startY
+            middleXOfButton = (buttonWidth / 2) + startX
+
+            --Draw middle of triangle
+            for y = endY - 1, startY + 1, -1 do
+                paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
+            end
+        end
+
+        function drawFooter(x, y)
+            drawBackground(x, y, 142, 51, colors.gray)
+        end
+
+        function drawMadeBy(x, y)
+            monitor.setTextColor(colors.lightBlue)
+            monitor.setBackgroundColor(colors.gray)
+            bigfont.writeOn(monitor, 1, "Made by: " .. shopOwner, x, y + 1)
+        end
+
+        function drawVersion(x, y)
+            monitor.setTextColor(colors.lightBlue)
+            monitor.setBackgroundColor(colors.gray)
+            bigfont.writeOn(monitor, 1, version, x, y + 1)
+        end
+
+        main()
