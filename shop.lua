@@ -28,29 +28,29 @@ function main()
     monitor.setTextScale(0.5)
 
     while (1) do
-    --Draw page background
-    drawBackground(1, 1, 150, 62, colors.black)
-    --Draw title
-    drawTitle(40, 3)
-    --Draw categories
-    drawCategories(2, 2)
-    --Draw report bug
-    drawBugReport(2, 48)
-    --Draw popular tab
-    --Color of each item frame will come from the frame info
-    --Draw popular items in frames of popular tab
-    --Draw footer background
-    drawFooter(33, 48)
-    --Draw made by
-    drawMadeBy(34, 48)
-    --Draw version
-    drawVersion(160 - (#version * 5), 48)
-    --Draw main page
-    drawMainPage(33,13)
-    --Draw buttons
-    drawUpButton(132, 32, 9, 5)
-    drawDownButton(132, 40, 9, 5)
-    --term.redirect(terminal)
+        --Draw page background
+        drawBackground(1, 1, 150, 62, colors.black)
+        --Draw title
+        drawTitle(40, 3)
+        --Draw categories
+        drawCategories(2, 2)
+        --Draw report bug
+        drawBugReport(2, 48)
+        --Draw popular tab
+        --Color of each item frame will come from the frame info
+        --Draw popular items in frames of popular tab
+        --Draw footer background
+        drawFooter(33, 48)
+        --Draw made by
+        drawMadeBy(34, 48)
+        --Draw version
+        drawVersion(160 - (#version * 5), 48)
+        --Draw main page
+        drawMainPage(33, 13)
+        --Draw buttons
+        drawUpButton(132, 32, 9, 5)
+        drawDownButton(132, 40, 9, 5)
+        --term.redirect(terminal)
     end
 end
 
@@ -117,7 +117,6 @@ function drawMainPage(x, y)
     drawBackground(x, y, 142, 46, colors.lightGray)
     --Display item address, price, and description
     --Display image of item
-
 end
 
 function drawUpButton(x, y, width, height)
@@ -133,12 +132,11 @@ function drawUpButtonTriangle(startX, startY, endX, endY)
     middleXOfButton = (buttonWidth / 2) + startX
 
     --Draw middle of triangle
-    for y = startY + 1, endY - 1, 1 do 
+    for y = startY + 1, endY - 1, 1 do
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
-    
+
     --Draw angles
-    
 end
 
 function drawDownButton(x, y, width, height)
@@ -154,11 +152,9 @@ function drawDownButtonTriangle(startX, startY, endX, endY)
     middleXOfButton = (buttonWidth / 2) + startX
 
     --Draw middle of triangle
-    for y = endY - 1, startY + 1, -1 do 
+    for y = endY - 1, startY + 1, -1 do
         paintutils.drawPixel(middleXOfButton, y, colors.lightBlue)
     end
-    
-    
 end
 
 function drawFooter(x, y)
