@@ -47,8 +47,8 @@ function main()
     --Draw main page
     drawMainPage(33,13)
     --Draw buttons
-    drawUpButton(133, 32, 9, 5)
-    drawDownButton(133, 40, 9, 5)
+    drawUpButton(132, 32, 9, 5)
+    drawDownButton(132, 40, 9, 5)
     --term.redirect(terminal)
 end
 
