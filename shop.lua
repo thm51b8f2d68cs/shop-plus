@@ -57,26 +57,26 @@ function main()
 --    end
 end
 
-function mainTouchListener()
-    local userTouch, x, y = os.pullEvent("monitor_touch")
-    categoryTouchListener(x, y, categories)
-    --Check if a category has been selected
-    --Display category items on main page
-
-    --Check if a main page tile has been selected
-    if (x >= 2 and x <= 31 and y >= 2 and y <= 46) then
-
-    elseif () then
-
-    elseif () then
-
-    elseif () then
-
-    elseif () then
-
-    else
-    end
-end
+--function mainTouchListener()
+--    local userTouch, x, y = os.pullEvent("monitor_touch")
+--    categoryTouchListener(x, y, categories)
+--    --Check if a category has been selected
+--    --Display category items on main page
+--
+--    --Check if a main page tile has been selected
+--    if (x >= 2 and x <= 31 and y >= 2 and y <= 46) then
+--
+--    elseif () then
+--
+--    elseif () then
+--
+--    elseif () then
+--
+--    elseif () then
+--
+--    else
+--    end
+--end
 
 function categoryTouchListener(x, y, categories)
     for category in categories do
