@@ -38,9 +38,6 @@ function main()
     --Draw popular tab
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
-    --Draw buttons
-    drawUpButton(133, 32, 9, 5)
-    drawDownButton(133, 40, 9, 5)
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
@@ -49,6 +46,9 @@ function main()
     drawVersion(160 - (#version * 5), 48)
     --Draw main page
     drawMainPage(33,13)
+    --Draw buttons
+    drawUpButton(133, 32, 9, 5)
+    drawDownButton(133, 40, 9, 5)
     --term.redirect(terminal)
 end
 
@@ -112,7 +112,7 @@ end
 
 function drawMainPage(x, y)
     --Draw main page background()
-    drawBackground(x, y, 142, 49, colors.lightGray)
+    drawBackground(x, y, 142, 46, colors.lightGray)
     --Display item address, price, and description
     --Display image of item
 
