@@ -12,7 +12,7 @@ function main()
 
     --Wrap inventory
     inventory = peripheral.wrap("bottom")
-    inventoryManager = os.loadAPI("inventoryManager.lua")
+    inventoryManager = require("inventoryManager.lua")
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
