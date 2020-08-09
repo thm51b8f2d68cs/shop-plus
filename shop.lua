@@ -134,7 +134,8 @@ function drawBrowsePage()
     local height = 11
     local column = 1
 
-    local itemData = io.open("items.txt", "r")
+    local itemFile = io.open("items.txt", "r")
+    local itemData = itemFile:read("*a")
     local items = textutils.unserialize(itemData)
     for item in pairs(items) do
         drawBackground(x, y, x + width, y + height, colors.white)
