@@ -52,34 +52,8 @@ function main()
     --Draw buttons
     drawUpButton(132, 32, 9, 5)
     drawDownButton(132, 40, 9, 5)
-    --Draw home button
---    drawHomeButton(132, 14, 8, 5)
     --term.redirect(terminal)
---    while (1) do
---        pageToDisplay = mainTouchListener()
---    end
 end
-
---function mainTouchListener()
---    local userTouch, x, y = os.pullEvent("monitor_touch")
---    categoryTouchListener(x, y, categories)
---    --Check if a category has been selected
---    --Display category items on main page
---
---    --Check if a main page tile has been selected
---    if (x >= 2 and x <= 31 and y >= 2 and y <= 46) then
---
---    elseif () then
---
---    elseif () then
---
---    elseif () then
---
---    elseif () then
---
---    else
---    end
---end
 
 function drawBackground(startX, startY, endX, endY, color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
@@ -154,9 +128,9 @@ function drawMainPage(x, y, page)
 end
 
 function drawBrowsePage()
-    local x = 47
+    local x = 42
     local y = 16
-    local width = 26
+    local width = 30
     local height = 11
     local column = 1
 
