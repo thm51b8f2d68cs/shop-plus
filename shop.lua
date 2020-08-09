@@ -33,7 +33,7 @@ function main()
     --Draw main page
     drawMainPage(33, 13)
     --Draw title
-    drawTitle(40, 3)
+    drawTitle(45, 3)
     --Draw categories
     --local categories = drawCategories(2, 2)
     drawCategories(2, 2)
