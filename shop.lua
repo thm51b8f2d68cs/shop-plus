@@ -11,7 +11,7 @@ function main()
     monitorWidth, monitorHeight = monitor.getSize()
 
 
-    Wrap inventory
+    --Wrap inventory
     inventory = peripheral.wrap("bottom")
     inventoryManager = os.loadAPI("inventoryManager.lua")
     inventoryManager.parseItems()
@@ -36,7 +36,7 @@ function main()
     --Draw title
     drawTitle(48, 3)
     --Draw categories
-    drawCategories(2, 2)
+    drawPages(2, 2)
     --Draw cart button
     drawReportABug(2, 48)
     --Draw popular tab
@@ -52,7 +52,7 @@ function main()
     drawUpButton(132, 32, 9, 5)
     drawDownButton(132, 40, 9, 5)
     --Draw home button
-    drawHomeButton(132, 14, 8, 5)
+--    drawHomeButton(132, 14, 8, 5)
     --term.redirect(terminal)
 --    while (1) do
 --        pageToDisplay = mainTouchListener()
@@ -80,22 +80,6 @@ end
 --    end
 --end
 
-function categoryTouchListener(x, y, categories)
-    for category in categories do
-        if (x >= category.x and x <= category.x + 29 and y >= category.y and y <= category.y + 2) then
-            userChoice = category.category
-        end
-    end
-end
-
-function getCategory()
-    local category = ""
-end
-
-function setColors()
-    monitor.setPaletteColor(colors)
-end
-
 function drawBackground(startX, startY, endX, endY, color)
     paintutils.drawFilledBox(startX, startY, endX, endY, color)
 end
@@ -109,22 +93,22 @@ function drawTitle(x, y)
     bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
 end
 
-function drawHomeButton(x, y, width, height)
-    drawBackground(x, y, x + width, y + height, colors.gray)
-    --drawUpButtonTriangle(x, y, x + width, y + height)
-    bigfont.writeOn(monitor, 1, "H", ((width / 2) + x) - 1, (height/ 2) + y)
-end
+--function drawHomeButton(x, y, width, height)
+--    drawBackground(x, y, x + width, y + height, colors.gray)
+--    --drawUpButtonTriangle(x, y, x + width, y + height)
+--    bigfont.writeOn(monitor, 1, "H", ((width / 2) + x) - 1, (height/ 2) + y)
+--end
 
-function drawCategories(x, y)
+function drawPages(x, y)
 
     drawBackground(2, 2, 31, 46, colors.white)
     --Set colors for categories text and fill
     --Set text size for categories
 
-    local categories = io.open("categories.txt", "r")
+    local pages = io.open("pages.txt", "r")
     local index = 0
 
-    for line in categories:lines() do
+    for line in pages:lines() do
 
         monitor.setCursorPos(x, y)
 
@@ -143,6 +127,7 @@ function drawCategories(x, y)
         index = index + 1
         y = y + 3
     end
+    pages:close()
 end
 
 function drawCategory()
@@ -152,10 +137,10 @@ function drawReportABug(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Cart", (31 / 2) + 1, y + 1)
+    bigfont.writeOn(monitor, 1, "Report a bug", (31 / 2) + 1, y + 1)
 end
 
-function drawMainPage(x, y, category)
+function drawMainPage(x, y)
     --Draw main page background()
     drawBackground(x, y, 142, 46, colors.lightGray)
 
@@ -165,7 +150,9 @@ function drawMainPage(x, y, category)
     local height = 15
     local tileColumn = 1
 
-    for item in category do
+    local items = io.open("items.txt", "r")
+
+    for items in items:line() do
         drawBackground(x, y, x + width, y + height, colors.white)
         if (tileColumn % 2 == 0) then
             y = y + 5
