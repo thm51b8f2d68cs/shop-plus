@@ -9,9 +9,10 @@
 local function parseItems(inventory)
     local items = io.open("items.txt", "w")
     local itemData = {}
-    for item in pairs(inventory.list()) do
-        items:write(textutils.serialize(item))
+    for slot, item in pairs(inventory.list()) do
+        itemData.slot = item
     end
+    items:write(textutils.serialize(itemData))
     items:close()
 end
 
