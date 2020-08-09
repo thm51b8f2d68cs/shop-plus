@@ -136,8 +136,12 @@ function drawBrowsePage()
 
     local itemFile = io.open("items.txt", "r")
     local itemData = itemFile:read("*a")
+    local items = {}
     itemFile:close()
-    local items = textutils.unserialize(itemData)
+    --local items = textutils.unserialize(itemData)
+    for slot in itemData do
+        items[slot] = textutils.unserialize(itemData[slot])
+    end
     for slot, item in pairs(items) do
         drawBackground(x, y, x + width, y + height, colors.white)
         if (column % 2 == 0) then
