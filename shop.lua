@@ -137,13 +137,19 @@ function drawReportABug(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report a bug", (31 / 2) + 1, y + 1)
+    bigfont.writeOn(monitor, 1, "Report a bug", 31 / 2, y + 1)
 end
 
 function drawMainPage(x, y)
     --Draw main page background()
     drawBackground(x, y, 142, 46, colors.lightGray)
+    --Display page that is selected
+    --Show which page is selected
+        --Connect main page to pages tab in the black space
 
+end
+
+function drawBrowsePage()
     local x = 50
     local y = 16
     local width = 25
