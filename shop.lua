@@ -5,7 +5,7 @@ function main()
     bigfont = require("bigfont")
     --Wrap monitor
     side = "top"
-    shopName = "Switch Shop"
+    shopName = "Einkaufen macht Spaß"
     version = "1.0 alpha"
     monitor = peripheral.wrap(side)
     monitorWidth, monitorHeight = monitor.getSize()
