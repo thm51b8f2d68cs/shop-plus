@@ -13,7 +13,7 @@ function main()
 
     --Wrap inventory
     inventory = peripheral.wrap("bottom")
-    inventoryManager = os.loadAPI("inventoryManager.lua")
+    inventoryManager = require("inventoryManager.lua")
     inventoryManager.parseItems()
 
     --Define color palette
