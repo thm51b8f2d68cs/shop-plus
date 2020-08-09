@@ -152,7 +152,7 @@ function drawMainPage(x, y)
 
     local items = io.open("items.txt", "r")
 
-    for item in items:line() do
+    for item in items:lines() do
         drawBackground(x, y, x + width, y + height, colors.white)
         if (tileColumn % 2 == 0) then
             y = y + 5
