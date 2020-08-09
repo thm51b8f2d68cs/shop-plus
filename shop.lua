@@ -139,20 +139,16 @@ function drawBrowsePage()
     itemFile:close()
     local items = textutils.unserialize(itemData)
     for slot, item in pairs(items) do
+        drawBackground(x, y, x + width, y + height, colors.white)
+        monitor.setTextColor(colors.white)
+        monitor.setBackgroundColor(colors.black)
+        bigfont.writeOn(monitor, 1, item.name, x, y)
         if (column % 2 == 0) then
-            drawBackground(x, y, x + width, y + height, colors.white)
-            monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.black)
-            bigfont.writeOn(monitor, 1, item.name, x, y)
-            y = y + 5
-            x = x - 10
+            y = y + 10
+            x = x - 30
             column = 1
         else
-            drawBackground(x, y, x + width, y + height, colors.white)
-            monitor.setTextColor(colors.white)
-            monitor.setBackgroundColor(colors.black)
-            bigfont.writeOn(monitor, 1, item.name, x, y)
-            x = x + 10
+            x = x + 30
             column = column + 1
         end
     end
