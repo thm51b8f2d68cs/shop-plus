@@ -6,10 +6,10 @@ function main()
     --Wrap monitor
     side = "top"
     shopName = "Switch Shop"
-    shopOwner = "thm51b8f2d68cs"
     version = "1.0 alpha"
     monitor = peripheral.wrap(side)
     monitorWidth, monitorHeight = monitor.getSize()
+
 
 --    Wrap inventory
 --    inventory = peripheral.wrap("bottom")
@@ -202,7 +202,7 @@ end
 function drawMadeBy(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 1, "Made by: " .. shopOwner, x, y + 1)
+    bigfont.writeOn(monitor, 1, "Made by: thm51b8f2d68cs", x, y + 1)
 end
 
 function drawVersion(x, y)
