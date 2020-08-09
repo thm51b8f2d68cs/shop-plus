@@ -104,7 +104,7 @@ function drawTitle(x, y)
     monitor.setCursorPos(x, y)
     monitor.setTextColor(colors.lightBlue)
     monitor.setBackgroundColor(colors.gray)
-    bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
+    bigfont.writeOn(monitor, 1, shopName, monitor.getCursorPos())
 end
 
 function drawHomeButton(x, y, width, height)
