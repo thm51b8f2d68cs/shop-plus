@@ -158,19 +158,19 @@ function drawBrowsePage()
     local y = 16
     local width = 26
     local height = 11
-    local tileColumn = 1
+    local column = 1
 
     local items = io.open("items.txt", "r")
 
     for item in items:lines() do
         drawBackground(x, y, x + width, y + height, colors.white)
-        if (tileColumn % 2 == 0) then
+        if (column % 2 == 0) then
             y = y + 5
             x = x - 10
-            tileColumn = 1
+            column = 1
         else
             x = x + 10
-            tileColumn = tileColumn + 1
+            column = column + 1
         end
     end
 
