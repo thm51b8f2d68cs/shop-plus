@@ -1,6 +1,4 @@
-
-
-function parseItems()
+local function parseItems()
     local items = io.open("items.txt", "w")
     for item in inventory.list() do
         items:write(textutils.serialize(item))
@@ -8,4 +6,6 @@ function parseItems()
     items:close()
 end
 
-return
+return {
+    parseItems = parseItems
+}
