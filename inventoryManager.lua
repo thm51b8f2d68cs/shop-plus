@@ -12,7 +12,7 @@ local function parseItems(inventory)
     for slot, item in pairs(inventory.list()) do
         itemData.slot = item
     end
-    items:write(itemData)
+    items:write(textutils.serialize(itemData))
     items:close()
 end
 
