@@ -35,8 +35,8 @@ function main()
     --Draw title
     drawTitle(48, 3)
     --Draw categories
-    --local categories = drawCategories(2, 2)
-    drawCategories(2, 2)
+    local categories = drawCategories(2, 2)
+    --drawCategories(2, 2)
     --Draw cart button
     drawCartButton(2, 48)
     --Draw popular tab
@@ -125,7 +125,7 @@ function drawCategories(x, y)
     for line in categories:lines() do
 
         monitor.setCursorPos(x, y)
-        ammountOfCategories = {}
+        categoriesTable = {}
 
         if (index % 2 == 0) then
             monitor.setTextColor(colors.lightBlue)
@@ -145,7 +145,7 @@ function drawCategories(x, y)
         y = y + 3
     end
     categories:close()
-    return ammountOfCategories
+    return categoriesTable
 end
 
 function drawCategory()
@@ -158,9 +158,28 @@ function drawCartButton(x, y)
     bigfont.writeOn(monitor, 1, "Cart", (31 / 3) + 1, y + 1)
 end
 
-function drawMainPage(x, y)
+function drawMainPage(x, y, category)
     --Draw main page background()
     drawBackground(x, y, 142, 46, colors.lightGray)
+
+    local x = 50
+    local y = 16
+    local width = 20
+    local height = 15
+    local tileColumn = 1
+
+    for item in category do
+        drawBackground(x, y, x + width, y + height, colors.white)
+        if (tileColumn % 2 == 0) then
+            y = y + 5
+            x = x - 10
+            tileColumn = 1
+        else
+            x = x + 10
+            tileColumn = tileColumn + 1
+        end
+    end
+
     --Display item address, price, and description
     --Display image of item
 end
