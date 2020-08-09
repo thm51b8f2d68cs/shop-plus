@@ -32,7 +32,8 @@ function main()
     --Draw page background
     drawBackground(1, 1, monitorWidth, monitorHeight, colors.black)
     --Draw main page
-    drawMainPage(33, 13)
+    --Default page is browse
+    drawMainPage(33, 13, "browse")
     --Draw title
     drawTitle(48, 3)
     --Draw categories
@@ -140,13 +141,16 @@ function drawReportABug(x, y)
     bigfont.writeOn(monitor, 1, "Report a bug", 31 / 2, y + 1)
 end
 
-function drawMainPage(x, y)
+function drawMainPage(x, y, page)
     --Draw main page background()
     drawBackground(x, y, 142, 46, colors.lightGray)
     --Display page that is selected
     --Show which page is selected
         --Connect main page to pages tab in the black space
 
+    if (page == "browse") then
+       drawBrowsePage()
+    end
 end
 
 function drawBrowsePage()
