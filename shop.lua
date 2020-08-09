@@ -146,8 +146,8 @@ function drawMainPage(x, y)
 
     local x = 50
     local y = 16
-    local width = 20
-    local height = 15
+    local width = 25
+    local height = 10
     local tileColumn = 1
 
     local items = io.open("items.txt", "r")
