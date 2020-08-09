@@ -35,7 +35,7 @@ function main()
     --Default page is browse
     drawMainPage(33, 13, "browse")
     --Draw title
-    drawTitle(48, 3)
+    drawTitle(49, 3)
     --Draw categories
     drawPages(2, 2)
     --Draw cart button
@@ -138,7 +138,7 @@ function drawReportABug(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report a bug", x + 1, y + 1)
+    bigfont.writeOn(monitor, 1, "Report bug", x + 1, y + 1)
 end
 
 function drawMainPage(x, y, page)
@@ -154,7 +154,7 @@ function drawMainPage(x, y, page)
 end
 
 function drawBrowsePage()
-    local x = 50
+    local x = 47
     local y = 16
     local width = 26
     local height = 11
@@ -166,7 +166,7 @@ function drawBrowsePage()
         drawBackground(x, y, x + width, y + height, colors.white)
         if (column % 2 == 0) then
             y = y + 5
-            x = x - 10
+            --x = x - 10
             column = 1
         else
             x = x + 10
