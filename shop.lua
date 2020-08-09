@@ -52,7 +52,7 @@ function main()
     drawUpButton(132, 32, 9, 5)
     drawDownButton(132, 40, 9, 5)
     --Draw home button
-    drawHomeButton(132, 6, 8, 5)
+    drawHomeButton(132, 14, 8, 5)
     --term.redirect(terminal)
 --    while (1) do
 --        pageToDisplay = mainTouchListener()
