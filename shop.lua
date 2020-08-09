@@ -11,9 +11,10 @@ function main()
     monitorWidth, monitorHeight = monitor.getSize()
 
 
---    Wrap inventory
---    inventory = peripheral.wrap("bottom")
---    inventoryManager = os.loadAPI("inventoryManager.lua")
+    Wrap inventory
+    inventory = peripheral.wrap("bottom")
+    inventoryManager = os.loadAPI("inventoryManager.lua")
+    inventoryManager.parseItems()
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
@@ -134,13 +135,15 @@ function drawCategories(x, y)
             monitor.setBackgroundColor(colors.gray)
             drawBackground(x, y, x + 29, y + 2, colors.gray)
             bigfont.writeOn(monitor, 1, line, x, y)
-            ammountOfCategories.index = { "x", x, "y", y, "category", line }
+--            ammountOfCategories.index = { "x", x, "y", y, "category", line }
+            categoriesTable.index = line
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
             drawBackground(x, y, x + 29, y + 2, colors.lightGray)
             bigfont.writeOn(monitor, 1, line, x, y)
-            ammountOfCategories.index = { "x", x, "y", y, "category", line }
+--            ammountOfCategories.index = { "x", x, "y", y, "category", line }
+            categoriesTable.index = line
         end
 
         index = index + 1
