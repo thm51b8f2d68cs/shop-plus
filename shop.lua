@@ -156,8 +156,8 @@ end
 function drawBrowsePage()
     local x = 50
     local y = 16
-    local width = 25
-    local height = 10
+    local width = 26
+    local height = 11
     local tileColumn = 1
 
     local items = io.open("items.txt", "r")
