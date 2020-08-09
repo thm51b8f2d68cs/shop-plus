@@ -14,7 +14,7 @@ function main()
     --Wrap inventory
     inventory = peripheral.wrap("bottom")
     inventoryManager = require("inventoryManager")
-    inventoryManager.parseItems()
+    inventoryManager.parseItems(inventory)
 
     --Define color palette
     monitor.setPaletteColor(colors.black, 0x000000)
