@@ -36,10 +36,9 @@ function main()
     --Draw title
     drawTitle(48, 3)
     --Draw categories
-    local categories = drawCategories(2, 2)
-    --drawCategories(2, 2)
+    drawCategories(2, 2)
     --Draw cart button
-    drawCartButton(2, 48)
+    drawReportABug(2, 48)
     --Draw popular tab
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
@@ -128,39 +127,32 @@ function drawCategories(x, y)
     for line in categories:lines() do
 
         monitor.setCursorPos(x, y)
-        categoriesTable = {}
 
         if (index % 2 == 0) then
             monitor.setTextColor(colors.lightBlue)
             monitor.setBackgroundColor(colors.gray)
             drawBackground(x, y, x + 29, y + 2, colors.gray)
             bigfont.writeOn(monitor, 1, line, x, y)
---            ammountOfCategories.index = { "x", x, "y", y, "category", line }
-            categoriesTable.index = line
         else
             monitor.setTextColor(colors.white)
             monitor.setBackgroundColor(colors.lightGray)
             drawBackground(x, y, x + 29, y + 2, colors.lightGray)
             bigfont.writeOn(monitor, 1, line, x, y)
---            ammountOfCategories.index = { "x", x, "y", y, "category", line }
-            categoriesTable.index = line
         end
 
         index = index + 1
         y = y + 3
     end
-    categories:close()
-    return categoriesTable
 end
 
 function drawCategory()
 end
 
-function drawCartButton(x, y)
+function drawReportABug(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Cart", (31 / 3) + 1, y + 1)
+    bigfont.writeOn(monitor, 1, "Cart", (31 / 2) + 1, y + 1)
 end
 
 function drawMainPage(x, y, category)
