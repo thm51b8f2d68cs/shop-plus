@@ -45,7 +45,7 @@ function main()
     --Draw footer background
     drawFooter(33, 48)
     --Draw made by
-    drawMadeBy(34, 48)
+    drawMadeBy(34, 48, categories)
     --Draw version
     drawVersion(160 - (#version * 5), 48)
     --Draw buttons
@@ -88,7 +88,9 @@ function categoryTouchListener(x, y, categories)
     end
 end
 
-
+function getCategory()
+    local category = ""
+end
 
 function setColors()
     monitor.setPaletteColor(colors)
