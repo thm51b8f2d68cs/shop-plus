@@ -6,7 +6,6 @@
 --    items:close()
 --end
 
-
 local function parseItems(inventory)
     local items = io.open("items.txt", "w")
     local itemData = {}
