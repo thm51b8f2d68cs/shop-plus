@@ -37,8 +37,8 @@ function main()
     --Draw categories
     --local categories = drawCategories(2, 2)
     drawCategories(2, 2)
-    --Draw report bug
-    drawBugReport(2, 48)
+    --Draw cart button
+    drawCartButton(2, 48)
     --Draw popular tab
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
@@ -51,6 +51,8 @@ function main()
     --Draw buttons
     drawUpButton(132, 32, 9, 5)
     drawDownButton(132, 40, 9, 5)
+    --Draw home button
+    drawHomeButton(132, 39, 8, 5)
     --term.redirect(terminal)
 --    while (1) do
 --        pageToDisplay = mainTouchListener()
@@ -105,6 +107,12 @@ function drawTitle(x, y)
     bigfont.writeOn(monitor, 2, shopName, monitor.getCursorPos())
 end
 
+function drawHomeButton(x, y, width, height)
+    drawBackground(x, y, x + width, y + height, colors.gray)
+    --drawUpButtonTriangle(x, y, x + width, y + height)
+    bigfont.writeOn(monitor, 1, "H", x, y)
+end
+
 function drawCategories(x, y)
 
     drawBackground(2, 2, 31, 46, colors.white)
@@ -143,11 +151,11 @@ end
 function drawCategory()
 end
 
-function drawBugReport(x, y)
+function drawCartButton(x, y)
     drawBackground(x, y, 31, 51, colors.lightGray)
     monitor.setTextColor(colors.white)
     monitor.setBackgroundColor(colors.lightGray)
-    bigfont.writeOn(monitor, 1, "Report bug", x, y + 1)
+    bigfont.writeOn(monitor, 1, "Cart", (31 / 2) + 1, y + 1)
 end
 
 function drawMainPage(x, y)
