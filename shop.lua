@@ -138,11 +138,11 @@ function drawBrowsePage()
     local itemData = itemFile:read("*a")
     itemFile:close()
     local items = textutils.unserialize(itemData)
-    for item in pairs(items) do
+    for slot, item in pairs(items) do
         drawBackground(x, y, x + width, y + height, colors.white)
         if (column % 2 == 0) then
             y = y + 5
-            --x = x - 10
+            x = x - 10
             column = 1
         else
             x = x + 10
