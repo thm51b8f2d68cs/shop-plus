@@ -134,9 +134,9 @@ function drawBrowsePage()
     local height = 11
     local column = 1
 
-    local items = io.open("items.txt", "r")
-
-    for item in items:lines() do
+    local itemData = io.open("items.txt", "r")
+    local items = textutils.unserialize(itemData)
+    for _, item in pairs(items) do
         drawBackground(x, y, x + width, y + height, colors.white)
         if (column % 2 == 0) then
             y = y + 5
