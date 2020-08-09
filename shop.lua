@@ -110,7 +110,7 @@ end
 function drawHomeButton(x, y, width, height)
     drawBackground(x, y, x + width, y + height, colors.gray)
     --drawUpButtonTriangle(x, y, x + width, y + height)
-    bigfont.writeOn(monitor, 1, "H", x, y)
+    bigfont.writeOn(monitor, 1, "H", (x / 2) + 1, (y / 2) + 1)
 end
 
 function drawCategories(x, y)
