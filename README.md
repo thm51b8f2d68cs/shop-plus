@@ -1,2 +1,2 @@
-# switch-shop
+# shop-plus
 A krist shop.
