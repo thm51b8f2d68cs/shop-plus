@@ -128,10 +128,10 @@ function drawMainPage(x, y, page)
 end
 
 function drawBrowsePage()
-    local x = 38
+    local x = 40
     local y = 15
-    local width = 39
-    local height = 14
+    local width = 37
+    local height = 12
     local column = 1
 
 --    local itemFile = io.open("items.txt", "r")
@@ -145,7 +145,7 @@ function drawBrowsePage()
         local itemData = inventory.getItem(slot).getMetadata()
         bigfont.writeOn(monitor, 1, itemData.displayName, x, y)
         if (column % 2 == 0) then
-            y = y + 15
+            y = y + 17
             x = x - 50
             column = 1
         else
