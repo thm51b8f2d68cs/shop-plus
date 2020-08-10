@@ -129,9 +129,9 @@ end
 
 function drawBrowsePage()
     local x = 38
-    local y = 16
-    local width = 36
-    local height = 13
+    local y = 15
+    local width = 39
+    local height = 14
     local column = 1
 
 --    local itemFile = io.open("items.txt", "r")
