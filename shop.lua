@@ -158,7 +158,8 @@ function drawBrowsePage()
             column = column + 1
         end
     end
-
+    drawBackground(48, 2, 143, 12, colors.black)
+    drawBackground(32, 47, 141, 50, colors.black)
     --Display item address, price, and description
     --Display image of item
 end
