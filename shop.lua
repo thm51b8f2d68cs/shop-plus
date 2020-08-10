@@ -144,8 +144,8 @@ function drawBrowsePage()
         monitor.setBackgroundColor(colors.white)
         monitor.setCursorPos(x, y)
         local itemData = inventory.getItem(slot).getMetadata()
---        bigfont.writeOn(monitor, 1, itemData.displayName, x, y)
-        monitor.write(itemData.displayName)
+        bigfont.writeOn(monitor, 1, itemData.displayName, ((x + width) / 3) + 1, y)
+--        monitor.write(itemData.displayName)
         if (column % 2 == 0) then
             y = y + 17
             x = x - 50
