@@ -128,10 +128,10 @@ function drawMainPage(x, y, page)
 end
 
 function drawBrowsePage()
-    local x = 42
+    local x = 38
     local y = 16
-    local width = 30
-    local height = 11
+    local width = 35
+    local height = 13
     local column = 1
 
 --    local itemFile = io.open("items.txt", "r")
@@ -146,10 +146,10 @@ function drawBrowsePage()
         bigfont.writeOn(monitor, 1, itemData.displayName, x, y)
         if (column % 2 == 0) then
             y = y + 10
-            x = x - 45
+            x = x - 50
             column = 1
         else
-            x = x + 45
+            x = x + 50
             column = column + 1
         end
     end
