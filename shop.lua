@@ -134,15 +134,15 @@ function drawBrowsePage()
     local height = 11
     local column = 1
 
-    local itemFile = io.open("items.txt", "r")
-    local itemData = itemFile:read("*a")
-    itemFile:close()
-    local items = textutils.unserialize(itemData)
-    for slot, item in pairs(items) do
+--    local itemFile = io.open("items.txt", "r")
+--    local itemData = itemFile:read("*a")
+--    itemFile:close()
+--    local items = textutils.unserialize(itemData)
+    for slot, item in pairs(inventory.list()) do
         drawBackground(x, y, x + width, y + height, colors.white)
---        monitor.setTextColor(colors.white)
---        monitor.setBackgroundColor(colors.black)
---        bigfont.writeOn(monitor, 1, item.name, x, y)
+        monitor.setTextColor(colors.black)
+        monitor.setBackgroundColor(colors.white)
+        bigfont.writeOn(monitor, 1, inventory.getItem(slot), x, y)
         if (column % 2 == 0) then
             y = y + 10
             x = x - 45
