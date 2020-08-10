@@ -145,10 +145,10 @@ function drawBrowsePage()
 --        bigfont.writeOn(monitor, 1, item.name, x, y)
         if (column % 2 == 0) then
             y = y + 10
-            x = x - 60
+            x = x - 45
             column = 1
         else
-            x = x + 60
+            x = x + 45
             column = column + 1
         end
     end
