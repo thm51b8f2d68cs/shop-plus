@@ -145,7 +145,7 @@ function drawBrowsePage()
         local itemData = inventory.getItem(slot).getMetadata()
         bigfont.writeOn(monitor, 1, itemData.displayName, x, y)
         if (column % 2 == 0) then
-            y = y + 10
+            y = y + 14
             x = x - 50
             column = 1
         else
