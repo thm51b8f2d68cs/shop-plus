@@ -35,7 +35,7 @@ function main()
     --Default page is browse
     drawMainPage(33, 13, "browse")
     --Draw title
-    drawBackground(48, 2, 143, 13, colors.black)
+    drawBackground(33, 3, 142, 12, colors.black)
     drawTitle(49, 3)
     --Draw categories
     drawPages(2, 2)
@@ -45,7 +45,7 @@ function main()
     --Color of each item frame will come from the frame info
     --Draw popular items in frames of popular tab
     --Draw footer background
-    drawBackground(32, 47, 141, 51, colors.black)
+    drawBackground(33, 47, 142, monitorHeight, colors.black)
     drawFooter(33, 48)
     --Draw made by
     drawMadeBy(34, 48, categories)
